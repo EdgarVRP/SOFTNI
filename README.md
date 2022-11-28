@@ -189,7 +189,7 @@ npm install --save-dev jest
 Se anexa el script de nodemon en package JSON
 
 ```
-"dev":"nodemon src/index.js"
+"dev":"nodemon src/app.js"
 ```
 
 Para correr con nodemon
@@ -197,7 +197,6 @@ Para correr con nodemon
 ```
 npm run dev
 ```
-
 
 Ejemplo de como desinstalar modulo
 
