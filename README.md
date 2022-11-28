@@ -36,6 +36,7 @@ Se crean las carpetas:
     - prestatario
   - db
 
+    - 0-loginDB.js
     - 1-userDB.js
     - 2-prestatarioDB.js
     - 3-proyectoDB.js
@@ -54,6 +55,7 @@ Se crean las carpetas:
     - 7-indicadoresController.js
   - models
 
+    - 0-loginModel.js
     - 1-userModel.js
     - 2-prestatarioModel.js
     - 3-proyectoModel.js
@@ -63,8 +65,9 @@ Se crean las carpetas:
     - 7-indicadoresModel.js
   - routes
 
+    - 0-loginRoutes.js
     - 1-userRoutes.js
-    - 2-loginRoutes.js
+    - 2-prestatarioRoutes.js
     - 3-altaRoutes.js
     - 4-proveedoresRoutes.js
     - 5-controlRoutes.js
@@ -131,7 +134,7 @@ touch src/models/6-documentosModel.js
 touch src/models/7-indicadoresModel.js
 mkdir src/routes
 touch src/routes/1-userRoutes.js
-touch src/routes/2-loginRoutes.js
+touch src/routes/2-prestatarioRoutes.js
 touch src/routes/3-altaRoutes.js
 touch src/routes/4-proveedoresRoutes.js
 touch src/routes/5-controlRoutes.js
@@ -152,6 +155,16 @@ touch src/views/layouts/main.ejs
 touch src/views/layouts/footer.ejs
 mkdir src/components
 touch src/components/uploadFileService.js
+```
+
+##Se añaden archivos para el login
+
+```
+touch src/db/0-loginDB.js
+touch src/models/0-loginModel.js
+touch src/routes/0-loginRoutes.js
+
+
 ```
 
 ###Para el servicio de guardar archivos en el servidor (repo "Archivos2" https://github.com/CodenautaJorge/files-js)

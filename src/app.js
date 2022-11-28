@@ -7,26 +7,30 @@ const session = require('express-session');
 const flash = require('connect-flash');
 //inicializaciones
 const app=express();
-require('./database');
+const port = process.env.PORT || 3000;
+//Se invoca conexion a la base de datos
+
+require('./db/1-userDB.js');//conexion CRUD USUARIOS
+require('./db/0-loginDB.js');//conexion CRUD LOGIN
 require('./passport/local-auth');
 //setting up the server
 //indicando la ruta de las vistas
 app.set('views',path.join(__dirname,'views'));
-const port=process.env.port || 3000;
 app.engine('ejs',engine);
 app.set('view engine','ejs');
 
 //middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
-
+app.use(express.json());
 //Configurando sesion
 app.use(session({
-    secret:'secreto', //USAR VARIABLE DE ENTORNO
+    secret:process.env.SECRET, //USAR VARIABLE DE ENTORNO
     resave:false,
     saveUninitialized:false
 }))
 app.use(flash()); //debe ir despues de session y antes de passport
+app.use((express.static(__dirname + '/public')));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -37,8 +41,14 @@ app.use((req,res,next)=>{
     next();
 })
 //requerimos las rutas
-app.use('/',require('./routes/routes'));
+app.use('/',require('./routes/0-loginRoutes')); //Ruta login
 
+const usuarios=require('./routes/1-userRoutes'); //Ruta usuarios
+app.use(usuarios);
+
+app.use((req, res, next) => {
+    res.status(404).send('Error: 404 - Not Found');
+});
 //starting the server
 app.listen(port,()=>{
     console.log(`Servidor corriendo en http://localhost:${port}`);

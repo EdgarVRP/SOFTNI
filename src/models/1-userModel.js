@@ -1,24 +1,16 @@
-const mongoose=require('mongoose');
-const {Schema}=mongoose;
-const bcrypt=require('bcryptjs');
-
-const userSchema=new Schema({
-    email:{type:String,required:true},
-    password:{type:String,required:true}
-});
-/* Recomendacion copilot
-userSchema.methods.encryptPassword=async (password)=>{
-    const salt=await bcrypt.genSalt(10);
-    const hash=bcrypt.hash(password,salt);
-    return hash;
-};
-*/
-userSchema.methods.encryptPassword=(password)=>{
-    return bcrypt.hashSync(password,bcrypt.genSaltSync(10));
-};
-
-userSchema.methods.matchPassword=function(password){
-    return bcrypt.compareSync(password,this.password);
-};
-//Recomendacion copilot
-module.exports= mongoose.model('users',userSchema);
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const alumnoSchema = new Schema(
+  {
+    idUsuario: {type: Number, required: true},
+    userName : {type: String, required: true},
+    password : {type: String, required: true},
+    dateTimeLogin : String,
+    rolUser : {type: String, required: true},
+    fechaCreacion : String,
+    email : {type: String, required: true},
+    telefono : {type: Number, required: true}
+  },
+  { versionKey: false }
+);
+module.exports = mongoose.model("usuarios", alumnoSchema);
