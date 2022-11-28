@@ -11,7 +11,6 @@ const port = process.env.PORT || 3000;
 //Se invoca conexion a la base de datos
 
 require('./db/1-userDB.js');//conexion CRUD USUARIOS
-require('./db/0-loginDB.js');//conexion CRUD LOGIN
 require('./passport/local-auth');
 //setting up the server
 //indicando la ruta de las vistas

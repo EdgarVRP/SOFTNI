@@ -1,6 +1,6 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const users=require('../models/0-loginModel');
+const users=require('../models/1-userModel');
 
 //serializando y deserializando el usuario
 passport.serializeUser((user,done)=>{
@@ -12,19 +12,20 @@ passport.deserializeUser(async (id,done)=>{
 });
 
 passport.use('local-signup', new LocalStrategy({
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true //permite pasar el req al callback
-}, async (req, username, password, done) => {
+}, async (req, email, password, done) => {
     //Haciendo validacion
-    const user= await users.findOne({'username': username})
+    const user= await users.findOne({'email': email})
     console.log(user)
     if(user){
         return done(null,false,req.flash('signupMessage','El correo ya esta en uso'));
     }else{
     const newuser=new users();
-    newuser.username=username;
+    newuser.email=email;
     newuser.password=newuser.encryptPassword(password); //Para encriptar las contraseñas
+    newuser.telefono=req.body.telefono;
     await newuser.save();
     done(null,newuser);
     }
@@ -32,12 +33,12 @@ passport.use('local-signup', new LocalStrategy({
 ));
 
 passport.use('local-signin', new LocalStrategy({
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true //permite pasar el req al callback
-}, async (req, username, password, done) => {
+}, async (req, email, password, done) => {
     //Haciendo validacion
-    const user= await users.findOne({'username': username})
+    const user= await users.findOne({'email': email})
     if (!user) {
         return done(null, false, req.flash('signinMessage', 'Usuario NO encontrado'));
     }

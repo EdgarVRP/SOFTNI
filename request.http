@@ -3,12 +3,12 @@ POST http://localhost:3000/admin/crear HTTP/1.1
 Content-Type: application/json
 
 {
-  "idUsuario": 26,
-    "userName" : "test@ejemplo.com",
-    "password" : "test@ejemplo.com",
+  "idUsuario": 6,
+    "userName" : "test1@ejemplo.com",
+    "password" : "test1@ejemplo.com",
     "dateTimeLogin" : "String",
-    "rolUser" : "-",
+    "rolUser" : "Administrador TI",
     "fechaCreacion" : "String",
-    "email" : "-",
-    "telefono" : 1111
+    "email" : "test1@ejemplo.com",
+    "telefono" : 1
   }

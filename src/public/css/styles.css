@@ -3,6 +3,9 @@ header{
     color: #fff;
     height: 10vh;
 }
+header img{
+  max-height: 10vh;
+}
 .cajaheader{
     width: 100%;
     height: 100%;
@@ -16,6 +19,9 @@ footer{
   background-color: #A9A9A9;
   height: 10vh;
   text-align: center;
+}
+footer p{
+  margin-bottom: 0;
 }
 
 /* Estilos boton GUARDAR*/

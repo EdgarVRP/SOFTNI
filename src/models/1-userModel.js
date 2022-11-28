@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const alumnoSchema = new Schema(
+const bcrypt = require("bcryptjs");
+const usuarioSchema = new Schema(
   {
     idUsuario: {type: Number, required: true},
     userName : {type: String, required: true},
@@ -13,4 +14,13 @@ const alumnoSchema = new Schema(
   },
   { versionKey: false }
 );
-module.exports = mongoose.model("usuarios", alumnoSchema);
+//Para passport
+usuarioSchema.methods.encryptPassword=(password)=>{
+  return bcrypt.hashSync(password,bcrypt.genSaltSync(10));
+};
+
+usuarioSchema.methods.matchPassword=function(password){
+  return bcrypt.compareSync(password,this.password);
+};
+
+module.exports = mongoose.model("usuarios", usuarioSchema);

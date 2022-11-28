@@ -1,5 +1,4 @@
-const Usuario= require('../models/1-userModel')
-const users=require('../models/0-loginModel');
+const Usuario= require('../models/1-userModel');
 //Mostrar
 module.exports.mostrar = (req, res)=>{
     Usuario.find({}, (error, usuarios)=>{
@@ -16,18 +15,18 @@ module.exports.mostrar = (req, res)=>{
 //Crear
 module.exports.crear = (req, res)=>{
     //console.log(req.body)
-    const newuser=new users();
     const usuario = new Usuario({
         _id: req.body._id,
         idUsuario: req.body.idUsuario,
         userName : req.body.userName,
-        password : newuser.encryptPassword(req.body.password),
+        password : "",
         dateTimeLogin : req.body.dateTimeLogin,
         rolUser : req.body.rolUser,
         fechaCreacion : req.body.fechaCreacion,
         email : req.body.email,
         telefono : req.body.telefono
     })
+    usuario.password = usuario.encryptPassword(req.body.password)
     usuario.save(function(error,usuario){
         if(error){
             return res.status(500).json({
@@ -40,10 +39,13 @@ module.exports.crear = (req, res)=>{
 
 //Editar
 module.exports.editar = (req,res)=>{
+    
+    const usuario = new Usuario();
+
     const id = req.body.id_editar
     const idUsuario = req.body.idUsuario_editar
     const userName = req.body.userName_editar
-    const password = req.body.password_editar
+    const password = usuario.encryptPassword(req.body.password_editar)
     const dateTimeLogin = req.body.dateTimeLogin_editar
     const rolUser = req.body.rolUser_editar
     const fechaCreacion = req.body.fechaCreacion_editar
