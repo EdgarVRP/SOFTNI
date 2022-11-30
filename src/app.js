@@ -41,10 +41,10 @@ app.use((req,res,next)=>{
 })
 //requerimos las rutas
 app.use('/',require('./routes/0-loginRoutes')); //Ruta login
-
+/*
 const usuarios=require('./routes/1-userRoutes'); //Ruta usuarios
 app.use(usuarios);
-
+*/
 app.use((req, res, next) => {
     res.status(404).send('Error: 404 - Not Found');
 });

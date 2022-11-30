@@ -35,16 +35,31 @@ passport.use('local-signup', new LocalStrategy({
 passport.use('local-signin', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
+    rolField: 'rol',
     passReqToCallback: true //permite pasar el req al callback
 }, async (req, email, password, done) => {
     //Haciendo validacion
     const user= await users.findOne({'email': email})
+    //Verificando contenido de req.body
     if (!user) {
         return done(null, false, req.flash('signinMessage', 'Usuario NO encontrado'));
     }
     if (!user.matchPassword(password)) {
         return done(null, false, req.flash('signinMessage', 'Contraseña incorrecta'));
     }
+
+    //Verificando el rol
+    try {
+        console.log(user.rolUser)    
+        if (user.rolUser == 'Administrador TI') {
+            return done(null, user, req.flash('signinMessage', 'Bienvenido Administrador'));
+        } else if (user.rolUser == 'user') {
+            return done(null, user, req.flash('signinMessage', 'Bienvenido Usuario'));
+        }
+    } catch (error) {
+        console.error(error)
+    }
+    
     done(null, user);
 }
 ));
