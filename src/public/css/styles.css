@@ -84,6 +84,7 @@ footer p{
   align-items: center;
 }
 .formRegistro input{
+  width: 80%;
   height: 40px;
   margin: 10px 0;
   border: 0;
@@ -103,10 +104,12 @@ input{
   justify-content: space-around;
 }
 .registroDatos{
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-
+  justify-items: right;
+  margin: 0 10% 0 0;
 }
 /*Estilos Datos Recibidos OK*/
 .mainDatosRecibidos{
@@ -138,6 +141,40 @@ nav ul li a{
   padding: 5px 10px;
 }
 
+/*Pantalla alta en sistema*/
+.mainAltaSistema{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.DatosPrestatario{
+  width: 50%;
+}
+.DatosPrestatario .registroDatos input{
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+}
+.DocumentoPrestatario .registroDatos input{
+  width: 80%;
+  margin: 0 20px;
+}
+.DocumentoPrestatario .registroDatos button{
+  width: 60%;
+  place-items: center;
+  justify-content:center;
+  margin: 0 20px;
+}
+.caja1AltaSistema{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.infoProyecto{
+  justify-items: center;
+  background-color: red;
+}
 
 /*Estilo responsive*/
 @media screen and (max-width: 768px){
