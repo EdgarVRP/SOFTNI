@@ -50,6 +50,7 @@ footer p{
   }
   /*Ocultando passwords*/
   .hidetext { -webkit-text-security: circle; }
+  /*Estilo responsive*/
   @media screen and (max-width: 768px){
     .btn-guardar{
       margin: 0 30%;
@@ -80,3 +81,29 @@ footer p{
     align-items: center;
   }
 /*Estilos para Solicitud de credito*/
+.mainSolicitudCredito{
+  display: flex;
+  justify-content: space-between;
+}
+#LogoRegistro{
+  width: 50%;
+  background-size: cover;
+}
+.formRegistro{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formRegistro input{
+  width: 80%;
+  height: 40px;
+  margin: 10px 0;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+input{
+  background-color: #D9D9D9;
+}
