@@ -50,19 +50,6 @@ footer p{
   }
   /*Ocultando passwords*/
   .hidetext { -webkit-text-security: circle; }
-  /*Estilo responsive*/
-  @media screen and (max-width: 768px){
-    .btn-guardar{
-      margin: 0 30%;
-    }
-    header{
-      height: 250px;
-    }
-    .cajaheader{
-      flex-direction: column;
-      justify-content: start;
-    }
-  }
   /*Estilos para LOGIN*/
   .mainLogin{
     background-image: url(../imagenes/Solicitud-Credito.png);
@@ -83,7 +70,6 @@ footer p{
 /*Estilos para Solicitud de credito*/
 .mainSolicitudCredito{
   display: flex;
-  justify-content: space-between;
 }
 #LogoRegistro{
   width: 50%;
@@ -106,4 +92,41 @@ footer p{
 }
 input{
   background-color: #D9D9D9;
+}
+.formRegistro button{
+  background-color: #00304E;
+  color: #fff;
+}
+.botonesFormRegistro{
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+
+
+
+
+/*Estilo responsive*/
+@media screen and (max-width: 768px){
+  .btn-guardar{
+    margin: 0 30%;
+  }
+  header{
+    height: 250px;
+  }
+  .cajaheader{
+    flex-direction: column;
+    justify-content: start;
+  }
+  .mainSolicitudCredito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #LogoRegistro{
+    width: 100%;
+  }
+  .formRegistro{
+    width: 100%;
+  }
 }

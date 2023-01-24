@@ -15,6 +15,12 @@ router.post('/', passport.authenticate('local-signin', {
 router.get('/', (req, res,next) => {
     res.render('2-1-singupView');
 });
+//PANTALLA 1 ADMIN USUARIO ADMINISTRADOR USUARIO
+const prestatarioController = require('../controllers/2-prestatarioController')
+//Crear usuarios (POST)
+//router.post('/registro', prestatarioController.crear)
+
+
 //PANTALLA 3 Alta en sistema y formalizacion
 router.get('/altaSistema',isAuth, (req, res,next) => {
     res.render('3-altaView');

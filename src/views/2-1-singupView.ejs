@@ -25,25 +25,28 @@
   </header>
   <main class="mainSolicitudCredito">
     <img src="imagenes/Registro.png" alt="Logo Registro" id="LogoRegistro" />
-    <form action="/" method="post" class="formRegistro">
+    <form action="/registro" method="post" class="formRegistro">
       <h2>Registro</h2>
       <label for="name">Nombre:</label>
-      <input type="text" name="name" placeholder="Nombre" />
+      <input type="text" name="name" placeholder="Nombre" id="name"/>
       <label for="rfc">RFC:</label>
-      <input type="text" name="rfc" placeholder="RFC4567890" />
+      <input type="text" name="rfc" placeholder="RFC4567890" id="rfc"/>
       <label for="cp">Código Postal:</label>
-      <input type="number" name="cp" placeholder="Codigo Postal" />
+      <input type="number" name="cp" placeholder="Codigo Postal" id="cp"/>
       <label for="ciudad">Ciudad:</label>
-      <input type="text" name="ciudad" placeholder="Ciudad" />
+      <input type="text" name="ciudad" placeholder="Ciudad" id="ciudad"/>
       <label for="direccion">Dirección:</label>
-      <input type="text" name="direccion" placeholder="Dirección" />
+      <input type="text" name="direccion" placeholder="Dirección" id="direccion"/>
       <label for="direcion2">Cruzamientos:</label>
-      <input type="text" name="direcion2" placeholder="Cruzamientos" />
+      <input type="text" name="direccion2" placeholder="Cruzamientos" id="direccion2"/>
       <label for="telefono">Teléfono:</label>
-      <input type="number" name="telefono" placeholder="Cruzamientos" />
+      <input type="number" name="telefono" placeholder="Teléfono" id="telefono"/>
       <label for="email">Teléfono:</label>
-      <input type="email" name="email" placeholder="Correo@correo.com" />
-      <button type="submit">Registrarse</button>
+      <input type="email" name="email" placeholder="Correo@correo.com" id="email"/>
+      <div class="botonesFormRegistro">
+        <button type="submit">Registrarse</button>
+      <button type="button" id="btnlimpiar">Limpiar</button>
+      </div>
     </form>
   </main>
   <footer>
@@ -55,5 +58,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 crossorigin="anonymous"></script>
+<script src="js/2-1-singupView.js"></script>
 </body>
 </html>
