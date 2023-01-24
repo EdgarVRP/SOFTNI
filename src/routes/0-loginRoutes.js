@@ -36,15 +36,15 @@ router.get('/home',isAuth, (req, res,next) => {
 router.get('/proveedores',isAuth, (req, res,next) => {
     res.render('4-1-proveedoresView');
 });
-//PANTALLA 5 Proveedores
+//PANTALLA 5 Control
 router.get('/control',isAuth, (req, res,next) => {
     res.render('5-controlView');
 });
-//PANTALLA 6 Proveedores
+//PANTALLA 6 Documentos
 router.get('/documentos',isAuth, (req, res,next) => {
     res.render('6-documentosView');
 });
-//PANTALLA 7 Proveedores
+//PANTALLA 7 Indicadores
 router.get('/indicadores',isAuth, (req, res,next) => {
     res.render('7-indicadoresView');
 });

@@ -70,6 +70,7 @@ footer p{
 /*Estilos para Solicitud de credito*/
 .mainSolicitudCredito{
   display: flex;
+  height: 78vh;
 }
 #LogoRegistro{
   width: 50%;
@@ -83,7 +84,6 @@ footer p{
   align-items: center;
 }
 .formRegistro input{
-  width: 80%;
   height: 40px;
   margin: 10px 0;
   border: 0;
@@ -102,6 +102,12 @@ input{
   width: 80%;
   justify-content: space-around;
 }
+.registroDatos{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+}
 /*Estilos Datos Recibidos OK*/
 .mainDatosRecibidos{
   height: 78vh;
@@ -112,7 +118,25 @@ input{
   height: 60%;
   background-size: cover;
 }
-
+/*Estilo para navbar*/
+nav ul li{
+  display: inline-block;
+  margin: 0 10px;
+}
+nav ul li a{
+  color: #00304E;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+#aLogout{
+  color: red;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
 
 
 /*Estilo responsive*/
