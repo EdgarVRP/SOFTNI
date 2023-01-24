@@ -102,7 +102,16 @@ input{
   width: 80%;
   justify-content: space-around;
 }
-
+/*Estilos Datos Recibidos OK*/
+.mainDatosRecibidos{
+  height: 78vh;
+  text-align: center;
+}
+#LogoRegistro2{
+  width: 30%;
+  height: 60%;
+  background-size: cover;
+}
 
 
 

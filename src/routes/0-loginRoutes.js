@@ -15,11 +15,14 @@ router.post('/', passport.authenticate('local-signin', {
 router.get('/', (req, res,next) => {
     res.render('2-1-singupView');
 });
-//PANTALLA 1 ADMIN USUARIO ADMINISTRADOR USUARIO
+//Se importa controlador de prestatario
 const prestatarioController = require('../controllers/2-prestatarioController')
 //Crear usuarios (POST)
 //router.post('/registro', prestatarioController.crear)
-
+//PANTALLA 2-1-1 Datos recibidos
+router.get('/registro', (req, res,next) => {
+    res.render('2-1-1datosRecibidos');
+});
 
 //PANTALLA 3 Alta en sistema y formalizacion
 router.get('/altaSistema',isAuth, (req, res,next) => {
