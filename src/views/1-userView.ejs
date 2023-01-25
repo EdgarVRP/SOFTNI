@@ -25,69 +25,6 @@
       <img src="imagenes/LogoCENIDET.jpg" alt="Logo CENIDET" id="LogoCENIDET" />
     </div>
   </header>
-
-  <div class="container">
-    <div class="shadow-lg p-3 mb-5 bg-body rounded">
-      <h4 class="col-md-6">Datos del Usuario</h4>
-      <form action="/admin/crear" method="POST">
-        <div class="col-md-6" style="display: none">
-          <label for="idUsuario" class="form-label">ID</label>
-          <input id="idUsuario" name="idUsuario" type="number" class="form-control" required value=<%=lastid %>>
-        </div>
-        <div class="col-md-6">
-          <label for="userName" class="form-label">Nombre de usuario</label>
-          <input id="userName" name="userName" type="text" class="form-control" required>
-        </div>
-        <div class="col-md-6">
-          <label for="password" class="form-label">Contraseña</label>
-          <input id="password" name="password" type="password" class="form-control" required>
-        </div>
-        <div class="col-md-6" style="display: none">
-          <label for="dateTimeLogin" class="form-label">Ultimo login</label>
-          <input id="dateTimeLogin" name="dateTimeLogin" type="datetime" class="form-control" required>
-        </div>
-
-        <!-- <div class="col-md-6">
-          <label for="rolUser" class="form-label">Rol</label>
-          <input id="rolUser" name="rolUser" type="text" class="form-control" required>
-        </div> -->
-        <Br>
-        <div class="col-md-6">
-          <label for="rolUser" class="form-label">Rol</label>
-          <select id="rolUser" name="rolUser">
-            <option value="AdministradorTI">Administrador TI</option>
-            <option value="PrestatarioSolicitante">Prestatario solicitante</option>
-            <option value="EstructuradorCredito">Estructurador de crédito</option>
-            <option value="DictaminadorCumplimientoLegal">Dictaminador de cumplimiento legal</option>
-            <option value="DictaminadorDocumental">Dictaminador documental</option>
-            <option value="AdministradorProyectos">Administrador de proyectos</option>
-            <option value="DictaminadorTecnico">Dictaminador Técnico</option>
-            <option value="Prestatario">Prestatario</option>
-            <option value="GrupoInversionistas">Grupo de Inversionistas</option>
-            <option value="Dirección">Dirección</option>
-          </select>
-        </div>
-
-
-        <div class="col-md-6" style="display: none">
-          <label for="fechaCreacion" class="form-label">Fecha de Creacion</label>
-          <input id="fechaCreacion" name="fechaCreacion" type="datetime" class="form-control" required>
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">email</label>
-          <input id="email" name="email" type="email" class="form-control" required>
-        </div>
-        <div class="col-md-6">
-          <label for="telefono" class="form-label">Telefono</label>
-          <input id="telefono" name="telefono" type="number" class="form-control" required>
-        </div>
-    </div>
-
-  </div>
-  <div class="botonRegistrar">
-    <button type="submit" class="btn btn-guardar btn-lg "><i class="bi bi-save"></i>Registrar Usuario</button>
-  </div>
-  </form>
   <!-- Tabla Usuarios  -->
   <table id="tablaUsuarios" class="table mt-4">
     <thead>
@@ -181,7 +118,67 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="shadow-lg p-3 mb-5 bg-body rounded">
+      <h4 class="col-md-6">Datos del nuevo usuario</h4>
+      <form action="/admin/crear" method="POST">
+        <div class="col-md-6" style="display: none">
+          <label for="idUsuario" class="form-label">ID</label>
+          <input id="idUsuario" name="idUsuario" type="number" class="form-control" required value=<%=lastid %>>
+        </div>
+        <div class="col-md-6">
+          <label for="userName" class="form-label">Nombre de usuario</label>
+          <input id="userName" name="userName" type="text" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="password" class="form-label">Contraseña</label>
+          <input id="password" name="password" type="password" class="form-control" required>
+        </div>
+        <div class="col-md-6" style="display: none">
+          <label for="dateTimeLogin" class="form-label">Ultimo login</label>
+          <input id="dateTimeLogin" name="dateTimeLogin" type="datetime" class="form-control" required>
+        </div>
 
+        <!-- <div class="col-md-6">
+          <label for="rolUser" class="form-label">Rol</label>
+          <input id="rolUser" name="rolUser" type="text" class="form-control" required>
+        </div> -->
+        <Br>
+        <div class="col-md-6">
+          <label for="rolUser" class="form-label">Rol</label>
+          <select id="rolUser" name="rolUser">
+            <option value="AdministradorTI">Administrador TI</option>
+            <option value="PrestatarioSolicitante">Prestatario solicitante</option>
+            <option value="EstructuradorCredito">Estructurador de crédito</option>
+            <option value="DictaminadorCumplimientoLegal">Dictaminador de cumplimiento legal</option>
+            <option value="DictaminadorDocumental">Dictaminador documental</option>
+            <option value="AdministradorProyectos">Administrador de proyectos</option>
+            <option value="DictaminadorTecnico">Dictaminador Técnico</option>
+            <option value="Prestatario">Prestatario</option>
+            <option value="GrupoInversionistas">Grupo de Inversionistas</option>
+            <option value="Dirección">Dirección</option>
+          </select>
+        </div>
+
+
+        <div class="col-md-6" style="display: none">
+          <label for="fechaCreacion" class="form-label">Fecha de Creacion</label>
+          <input id="fechaCreacion" name="fechaCreacion" type="datetime" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">email</label>
+          <input id="email" name="email" type="email" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="telefono" class="form-label">Telefono</label>
+          <input id="telefono" name="telefono" type="number" class="form-control" required>
+        </div>
+    </div>
+
+  </div>
+  <div class="botonRegistrar">
+    <button type="submit" class="btn btn-guardar btn-lg "><i class="bi bi-save"></i>Registrar Usuario</button>
+  </div>
   <footer>
     <%- include('./layouts/footer'); %>
   </footer>
