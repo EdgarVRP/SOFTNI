@@ -27,8 +27,8 @@
   </header>
   <main class="mainAltaSistema">
     <div class="BuscadorSolicitud">
-      <label for="Solicitud">N° de solicitud de crédito</label>
-      <input type="number" id="Solicitud" />
+      <label for="NumSolCredito">N° de solicitud de crédito</label>
+      <input type="number" id="NumSolCredito" />
       <button type="button" class="btn btn-primary">
         <i class="bi bi-search"></i>
     </div>
@@ -79,28 +79,30 @@
     <div class="DocumentoProyecto">
       <h2>Carga de información del Proyecto:</h2>
       <div class="BuscadorPrestatario">
-        <label for="Solicitud">N° de solicitud de crédito</label>
-        <input type="number" id="Solicitud" />
+        <label for="NumPrestatario">N° de prestatario</label>
+        <input type="number" id="NumPrestatario" />
         <button type="button" class="btn btn-primary">
           <i class="bi bi-search"></i>
       </div>
       <div class="registroDatos infoProyecto">
-        <label for="contratoPrestatario">Contrato de prestatario firmado:</label>
-          <input type="text" name="contratoPrestatario" id="contratoPrestatario" />
-          <label for="contratoPrestatario">Contrato de prestatario firmado:</label>
-          <input type="text" name="contratoPrestatario" id="contratoPrestatario" />
-          <label for="contratoPrestatario">Contrato de prestatario firmado:</label>
-          <input type="file" name="contratoPrestatario" id="contratoPrestatario" />
-          <label for="contratoPrestatario">Contrato de prestatario firmado:</label>
-          <input type="text" name="contratoPrestatario" id="contratoPrestatario" />
-          <p>Resultado de evaluación de factibilidad de crédito:</p>
-          <p id="resultado"> Aprobado/Denegado</p>
-          <label for="contratoPrestatario">Contrato de prestatario firmado:</label>
-          <input type="text" name="contratoPrestatario" id="contratoPrestatario" />
-          <button type="button" class="btn btn-primary" id="GuardarPrestatario">Guardar</button>
-          <button type="button" class="btn btn-primary" id="LimpiarPrestatario">Limpiar</button>
-          <p>Numero de control del prestatario:</p>
-          <p id="NumPrestatario">1000</p>
+        <label for="CantidadProveedores:">Cantidad de Proveedores:</label>
+        <input type="number" name="CantidadProveedores" id="CantidadProveedores" class="columna2izquierda"/>
+        <label for="FechaInicioProyecto">Fecha de inicio de proyecto:</label>
+        <input type="date" name="FechaInicioProyecto" id="FechaInicioProyecto" />
+        <label for="FechaFinProyecto">Fecha de fin de proyecto:</label>
+        <input type="date" name="FechaFinProyecto" id="FechaFinProyecto" />
+        <label for="CronogramaProyecto">Cronograma del proyecto:</label>
+        <input type="file" name="CronogramaProyecto" id="CronogramaProyecto" />
+        <label for="ProyeccionPresupuestaria">Proyeccion presupuestaria del proyecto:</label>
+        <input type="text" name="ProyeccionPresupuestaria" id="ProyeccionPresupuestaria" />
+        <p>Resultado de evaluación de factibilidad de crédito:</p>
+        <p id="resultado"> Aprobado/Denegado</p>
+        <label for="contratoProyecto">Contrato del proyecto firmado:</label>
+        <input type="file" name="contratoProyecto" id="contratoProyecto" />
+        <button type="button" class="btn btn-primary" id="GuardarPrestatario">Guardar</button>
+        <button type="button" class="btn btn-primary" id="LimpiarPrestatario">Limpiar</button>
+        <p>Numero de control del proyecto:</p>
+        <p id="NumPrestatario">1000</p>
       </div>
 
     </div>

@@ -50,6 +50,12 @@ footer p{
   }
   /*Ocultando passwords*/
   .hidetext { -webkit-text-security: circle; }
+  /*Estilos para administrador de usuarios*/
+  .col-md-6{
+    margin: 0 auto;
+  }
+
+
   /*Estilos para LOGIN*/
   .mainLogin{
     background-image: url(../imagenes/Solicitud-Credito.png);
@@ -108,7 +114,7 @@ input{
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: right;
+  justify-items: center;
   margin: 0 10% 0 0;
 }
 /*Estilos Datos Recibidos OK*/
@@ -162,20 +168,16 @@ nav ul li a{
 .DocumentoPrestatario .registroDatos button{
   width: 60%;
   place-items: center;
-  justify-content:center;
   margin: 0 20px;
 }
 .caja1AltaSistema{
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
 }
-.infoProyecto{
-  justify-items: center;
-  background-color: red;
+.DocumentoProyecto{
+  margin: auto;
 }
-
 /*Estilo responsive*/
 @media screen and (max-width: 768px){
   .btn-guardar{
