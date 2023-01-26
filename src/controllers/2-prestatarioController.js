@@ -1,14 +1,14 @@
-const Prestatario= require('../models/1-userModel');
+const Prestatario= require('../models/2-prestatarioModel');
 //Mostrar
 module.exports.mostrar = (req, res)=>{
-    Usuario.find({}, (error, usuarios)=>{
+    Prestatario.find({}, (error, usuarios)=>{
         if(error) {
             return res.status(500).json({
-                message: 'Error mostrando los usuarios'+error
+                message: 'Error mostrando los prestatarios'+error
             })
         }
         //console.log(usuarios.length)
-        return res.render('1-userView', {total: usuarios.length+1, usuarios: usuarios, lastid: 1+usuarios[usuarios.length-1].idUsuario})
+        return res.render('2-AdminPrestatario', {total: prestatario.length+1, prestatario: prestatarios, lastid: 1+prestatarios[prestatarios.length-1].idPrestatario})
     })
 }
 
