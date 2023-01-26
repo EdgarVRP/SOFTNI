@@ -8,7 +8,9 @@ module.exports.mostrar = (req, res)=>{
             })
         }
         //console.log(usuarios.length)
-        return res.render('1-userView', {total: usuarios.length+1, usuarios: usuarios, lastid: 1+usuarios[usuarios.length-1].idUsuario})
+        return res.render('1-userView',
+         {total: usuarios.length+1, usuarios: usuarios,
+             lastid: 1+usuarios[usuarios.length-1].idUsuario})
     })
 }
 

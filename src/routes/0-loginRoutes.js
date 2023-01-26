@@ -15,14 +15,6 @@ router.post('/', passport.authenticate('local-signin', {
 router.get('/', (req, res,next) => {
     res.render('2-1-singupView');
 });
-//Se importa controlador de prestatario
-const prestatarioController = require('../controllers/2-prestatarioController')
-//Crear usuarios (POST)
-//router.post('/registro', prestatarioController.crear)
-//PANTALLA 2-1-1 Datos recibidos
-router.get('/registro', (req, res,next) => {
-    res.render('2-1-1datosRecibidos');
-});
 
 //PANTALLA 3 Alta en sistema y formalizacion
 router.get('/altaSistema',isAuth, (req, res,next) => {
@@ -73,5 +65,35 @@ router.post('/admin/crear',isAuth, usuarioController.crear)
 router.post('/admin/editar',isAuth, usuarioController.editar)
 //Borrar usuarios (GET)
 router.get('/admin/borrar/:id',isAuth, usuarioController.borrar)
+
+
+//Se importa controlador de prestatario
+const prestatarioController = require('../controllers/2-prestatarioController')
+
+//PANTALLA 2-1-1 Datos recibidos
+/*
+router.get('/registro', (req, res,next) => {
+    res.render('2-1-1-datosRecibidos');
+});
+*/
+//Pantalla 2 admin prestatario
+//Mostrar todos los usuarios (GET)
+router.get('/adminPrestatario/', prestatarioController.mostrar)
+//Crear usuarios (POST)
+router.post('/adminPrestatario/crear', prestatarioController.crear)
+//Editar usuarios (POST)
+router.post('/adminPrestatario/editar', prestatarioController.editar)
+//Borrar usuarios (GET)
+router.get('/adminPrestatario/borrar/:id', prestatarioController.borrar)
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

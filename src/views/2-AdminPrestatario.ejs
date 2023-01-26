@@ -18,7 +18,7 @@
     <div class="cajaheader">
       <img src="imagenes/LogoTecNM.jpg" alt="Logo TecNM" id="LogoTecNM" />
       <div>
-        <h2>SOFTNI-Administración de usuarios</h2>
+        <h2>SOFTNI-Administración de Prestatario</h2>
         <%- include('./layouts/navbar'); %>
       </div>
       <a href="/logout" id="aLogout">Cerrar Sesión</a>
@@ -26,40 +26,94 @@
     </div>
   </header>
   <!-- Tabla Usuarios  -->
-  <table id="tablaUsuarios" class="table mt-4">
+  <table id="tablaPrestatario" class="table mt-4">
     <thead>
       <tr>
         <th style="display: none;">ID Mongo</th>
-        <th>ID</th>
-        <th>Nombre de usuario</th>
-        <th>password</th>
-        <th>Ultimo Acceso</th>
-        <th>Rol</th>
-        <th>Fecha de Creacion</th>
-        <th>email</th>
-        <th>telefono</th>
+        <th>ID Usuario</th>
+        <th>ID Prestatario</th>
+        <th>Nombre de Prestatario</th>
+        <th>RFC</th>
+        <th>Codigo Postal</th>
+        <th>Ciudad</th>
+        <th>Dirección</th>
+        <th>Cruzamientos</th>
+        <th>Telefono</th>
+        <th>Email</th>
+        <th>Numero de contrato</th>
+        <th>Fecha de contrato Prestatario</th>
+        <th>Ruta Contrato Prestatario</th>
+        <th>Ruta Identificación</th>
+        <th>Ruta Comprobante Domicilio</th>
+        <th>Linea de crédito</th>
+        <th>Calificacioón crédito</th>
       </tr>
     </thead>
-    <tbody><% usuarios.forEach( (usuario)=> { %><tr>
-          <td style="display: none;"><%= usuario._id %></td>
-          <td><%= usuario.idUsuario %></td>
-          <td><%= usuario.userName %></td>
-          <td class="hidetext"><%= usuario.password %></td>
-          <td><%= usuario.dateTimeLogin %></td>
-          <td><%= usuario.rolUser %></td>
-          <td><%= usuario.fechaCreacion %></td>
-          <td><%= usuario.email %></td>
-          <td><%= usuario.telefono %></td>
+    <tbody>
+      <% prestatarios.forEach( (prestatario)=> { %><tr>
+          <td style="display: none;">
+            <%= prestatario._id %>
+          </td>
+          <td>
+            <%= prestatario.idUsuario %>
+          </td>
+          <td>
+            <%= prestatario.idPrestatario %>
+          </td>
+          <td>
+            <%= prestatario.prestatarioName %>
+          </td>
+          <td>
+            <%= prestatario.rfc %>
+          </td>
+          <td>
+            <%= prestatario.codigoPostal %>
+          </td>
+          <td>
+            <%= prestatario.ciudad %>
+          </td>
+          <td>
+            <%= prestatario.direccion %>
+          </td>
+          <td>
+            <%= prestatario.cruzamientos %>
+          </td>
+          <td>
+            <%= prestatario.telefono %>
+          </td>
+          <td>
+            <%= prestatario.email %>
+          </td>
+          <td>
+            <%= prestatario.numeroContrato %>
+          </td>
+          <td>
+            <%= prestatario.fechaContratoPrestatario %>
+          </td>
+          <td>
+            <%= prestatario.rutaContratoPrestatario %>
+          </td>
+          <td>
+            <%= prestatario.rutaIdentificacion %>
+          </td>
+          <td>
+            <%= prestatario.rutaComprobanteDomicilio %>
+          </td>
+          <td>
+            <%= prestatario.lineaCredito %>
+          </td>
+          <td>
+            <%= prestatario.calificacionCredito %>
+          </td>
+
           <td>
             <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
-            <a href="/admin/borrar/<%= usuario._id %>" class="btn btn-outline-danger bi bi-trash"></a>
+            <a href="/adminPrestatario/borrar/<%= prestatario._id %>" class="btn btn-outline-danger bi bi-trash"></a>
           </td>
         </tr>
         <% }) %>
     </tbody>
   </table>
-  </div>
-
   <!-- Modal para Editar   -->
   <div id="modalUsuario" class="modal fade" tabindex="-1" aria-labelledby="modalUsuario" aria-hidden="true">
     <div class="modal-dialog">
@@ -86,18 +140,18 @@
             <input name="dateTimeLogin_editar" id="dateTimeLogin_editar" type="datetime" hidden>
             <div class="mb-3">
               <label for="rolUser_editar" class="col-form-label">Rol:</label>
-                <select id="rolUser_editar" name="rolUser_editar">
-                  <option value="AdministradorTI">Administrador TI</option>
-                  <option value="PrestatarioSolicitante">Prestatario solicitante</option>
-                  <option value="EstructuradorCredito">Estructurador de crédito</option>
-                  <option value="DictaminadorCumplimientoLegal">Dictaminador de cumplimiento legal</option>
-                  <option value="DictaminadorDocumental">Dictaminador documental</option>
-                  <option value="AdministradorProyectos">Administrador de proyectos</option>
-                  <option value="DictaminadorTecnico">Dictaminador Técnico</option>
-                  <option value="Prestatario">Prestatario</option>
-                  <option value="GrupoInversionistas">Grupo de Inversionistas</option>
-                  <option value="Dirección">Dirección</option>
-                </select>
+              <select id="rolUser_editar" name="rolUser_editar">
+                <option value="AdministradorTI">Administrador TI</option>
+                <option value="PrestatarioSolicitante">Prestatario solicitante</option>
+                <option value="EstructuradorCredito">Estructurador de crédito</option>
+                <option value="DictaminadorCumplimientoLegal">Dictaminador de cumplimiento legal</option>
+                <option value="DictaminadorDocumental">Dictaminador documental</option>
+                <option value="AdministradorProyectos">Administrador de proyectos</option>
+                <option value="DictaminadorTecnico">Dictaminador Técnico</option>
+                <option value="Prestatario">Prestatario</option>
+                <option value="GrupoInversionistas">Grupo de Inversionistas</option>
+                <option value="Dirección">Dirección</option>
+              </select>
             </div>
             <input name="fechaCreacion_editar" id="fechaCreacion_editar" type="datetime" hidden>
             <div class="mb-3">

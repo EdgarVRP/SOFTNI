@@ -12,3 +12,29 @@ Content-Type: application/json
     "email" : "test1@ejemplo.com",
     "telefono" : 1
   }
+
+
+###
+POST http://localhost:3000/adminPrestatario/crear HTTP/1.1
+Content-Type: application/json
+
+{
+
+  "idUsuario": 1,
+  "idPrestatario": 1,
+  "prestatarioName" : "Juan Perez",
+  "rfc" : "JUPR",
+  "codigoPostal" : "12345",
+  "ciudad" : "CDMX",
+  "direccion" : "Calle 1",
+  "cruzamientos" : "Calle 2",
+  "telefono" : 1234567890,
+  "email" : "ejemplo@ejemplo.com",
+  "numContrato": 2,
+  "fechaContratoPrestatario": "1",
+  "rutaContratoPrestatario": "1",
+  "rutaIdentificacion": "1",
+  "rutaComprobanteDomicilio": "1",
+  "lineaCredito": 1,
+  "calificacionCredito": "1"
+  }
