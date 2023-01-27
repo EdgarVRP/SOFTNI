@@ -8,7 +8,7 @@ module.exports.mostrar = (req, res)=>{
             })
         }
         //console.log(usuarios.length)
-        return res.render('2-AdminPrestatario', 
+        return res.render('0-2-AdminPrestatario', 
         {total: prestatarios.length+1,
              prestatarios: prestatarios,
               lastid: 1+prestatarios[prestatarios.length-1].idPrestatario})
