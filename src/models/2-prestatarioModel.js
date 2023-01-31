@@ -13,7 +13,7 @@ const prestatarioSchema = new Schema(
     telefono : {type: Number, required: true},
     email : {type: String, required: true},
     numContrato: {type: Number},
-    fechaContratoPrestatario: {type: Date},
+    fechaContratoPrestatario: {type: String},
     rutaContratoPrestatario: {type: String},
     rutaIdentificacion: {type: String},
     rutaComprobanteDomicilio: {type: String},

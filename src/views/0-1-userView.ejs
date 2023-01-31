@@ -42,14 +42,14 @@
     </thead>
     <tbody><% usuarios.forEach( (usuario)=> { %><tr>
           <td style="display: none;"><%= usuario._id %></td>
-          <td><%= usuario.idUsuario %></td>
-          <td><%= usuario.userName %></td>
-          <td class="hidetext"><%= usuario.password %></td>
-          <td><%= usuario.dateTimeLogin %></td>
-          <td><%= usuario.rolUser %></td>
-          <td><%= usuario.fechaCreacion %></td>
-          <td><%= usuario.email %></td>
-          <td><%= usuario.telefono %></td>
+          <td><%=usuario.idUsuario%></td>
+          <td><%=usuario.userName%></td>
+          <td class="hidetext"><%=usuario.password%></td>
+          <td><%=usuario.dateTimeLogin%></td>
+          <td><%=usuario.rolUser%></td>
+          <td><%=usuario.fechaCreacion%></td>
+          <td><%=usuario.email%></td>
+          <td><%=usuario.telefono%></td>
           <td>
             <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
             <a href="/admin/borrar/<%= usuario._id %>" class="btn btn-outline-danger bi bi-trash"></a>

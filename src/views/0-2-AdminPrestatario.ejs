@@ -46,65 +46,29 @@
         <th>Ruta Identificación</th>
         <th>Ruta Comprobante Domicilio</th>
         <th>Linea de crédito</th>
-        <th>Calificacioón crédito</th>
+        <th>Calificación crédito</th>
       </tr>
     </thead>
     <tbody>
       <% prestatarios.forEach( (prestatario)=> { %><tr>
-          <td style="display: none;">
-            <%= prestatario._id %>
-          </td>
-          <td>
-            <%= prestatario.idUsuario %>
-          </td>
-          <td>
-            <%= prestatario.idPrestatario %>
-          </td>
-          <td>
-            <%= prestatario.prestatarioName %>
-          </td>
-          <td>
-            <%= prestatario.rfc %>
-          </td>
-          <td>
-            <%= prestatario.codigoPostal %>
-          </td>
-          <td>
-            <%= prestatario.ciudad %>
-          </td>
-          <td>
-            <%= prestatario.direccion %>
-          </td>
-          <td>
-            <%= prestatario.cruzamientos %>
-          </td>
-          <td>
-            <%= prestatario.telefono %>
-          </td>
-          <td>
-            <%= prestatario.email %>
-          </td>
-          <td>
-            <%= prestatario.numeroContrato %>
-          </td>
-          <td>
-            <%= prestatario.fechaContratoPrestatario %>
-          </td>
-          <td>
-            <%= prestatario.rutaContratoPrestatario %>
-          </td>
-          <td>
-            <%= prestatario.rutaIdentificacion %>
-          </td>
-          <td>
-            <%= prestatario.rutaComprobanteDomicilio %>
-          </td>
-          <td>
-            <%= prestatario.lineaCredito %>
-          </td>
-          <td>
-            <%= prestatario.calificacionCredito %>
-          </td>
+          <td style="display: none;"><%= prestatario._id %></td>
+          <td><%=prestatario.idUsuario%></td>
+          <td><%=prestatario.idPrestatario%></td>
+          <td><%=prestatario.prestatarioName%></td>
+          <td><%=prestatario.rfc%></td>
+          <td><%=prestatario.codigoPostal%></td>
+          <td><%=prestatario.ciudad%></td>
+          <td><%=prestatario.direccion%></td>
+          <td><%=prestatario.cruzamientos%></td>
+          <td><%=prestatario.telefono%></td>
+          <td><%=prestatario.email%></td>
+          <td><%=prestatario.numContrato%></td>
+          <td><%=prestatario.fechaContratoPrestatario%></td>
+          <td><%=prestatario.rutaContratoPrestatario%></td>
+          <td><%=prestatario.rutaIdentificacion%></td>
+          <td><%=prestatario.rutaComprobanteDomicilio%></td>
+          <td><%=prestatario.lineaCredito%></td>
+          <td><%= prestatario.calificacionCredito%></td>
 
           <td>
             <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
@@ -115,7 +79,7 @@
     </tbody>
   </table>
   <!-- Modal para Editar   -->
-  <div id="modalUsuario" class="modal fade" tabindex="-1" aria-labelledby="modalUsuario" aria-hidden="true">
+  <div id="modalPrestatario" class="modal fade" tabindex="-1" aria-labelledby="modalUsuario" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
@@ -123,59 +87,89 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="/admin/editar" method="POST">
+          <form action="/adminPrestatario/editar" method="POST">
+            
             <input name="id_editar" id="id_editar" type="text" hidden>
             <div class="mb-3">
-              <label for="idUsuario_editar" class="col-form-label" hidden>ID:</label>
+              <label for="idUsuario_editar" class="col-form-label" hidden>ID Usuario:</label>
               <input id="idUsuario_editar" name="idUsuario_editar" type="number" class="form-control" value="" hidden>
             </div>
             <div class="mb-3">
-              <label for="userName_editar" class="col-form-label">Nombre de usuario:</label>
-              <input id="userName_editar" name="userName_editar" type="text" class="form-control" value="">
+              <label for="idPrestatario_editar" class="col-form-label" hidden>ID Prestatario:</label>
+              <input id="idPrestatario_editar" name="idPrestatario_editar" type="number" class="form-control" value="" hidden>
             </div>
             <div class="mb-3">
-              <label for="password_editar" class="col-form-label">Contraseña:</label>
-              <input id="password_editar" name="password_editar" type="password" class="form-control" value="">
+              <label for="prestatarioName_editar" class="col-form-label">Nombre de prestatario:</label>
+              <input id="prestatarioName_editar" name="prestatarioName_editar" type="text" class="form-control" value="">
             </div>
-            <input name="dateTimeLogin_editar" id="dateTimeLogin_editar" type="datetime" hidden>
             <div class="mb-3">
-              <label for="rolUser_editar" class="col-form-label">Rol:</label>
-              <select id="rolUser_editar" name="rolUser_editar">
-                <option value="AdministradorTI">Administrador TI</option>
-                <option value="PrestatarioSolicitante">Prestatario solicitante</option>
-                <option value="EstructuradorCredito">Estructurador de crédito</option>
-                <option value="DictaminadorCumplimientoLegal">Dictaminador de cumplimiento legal</option>
-                <option value="DictaminadorDocumental">Dictaminador documental</option>
-                <option value="AdministradorProyectos">Administrador de proyectos</option>
-                <option value="DictaminadorTecnico">Dictaminador Técnico</option>
-                <option value="Prestatario">Prestatario</option>
-                <option value="GrupoInversionistas">Grupo de Inversionistas</option>
-                <option value="Dirección">Dirección</option>
-              </select>
+              <label for="rfc_editar" class="col-form-label">RFC:</label>
+              <input id="rfc_editar" name="rfc_editar" type="text" class="form-control" value="">
             </div>
-            <input name="fechaCreacion_editar" id="fechaCreacion_editar" type="datetime" hidden>
             <div class="mb-3">
-              <label for="email_editar" class="col-form-label">email:</label>
+              <label for="codigoPostal_editar" class="col-form-label">Codigo Postal:</label>
+              <input id="codigoPostal_editar" name="codigoPostal_editar" type="number" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="direccion_editar" class="col-form-label">Dirección:</label>
+              <input id="direccion_editar" name="direccion_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="ciudad_editar" class="col-form-label">Ciudad:</label>
+              <input id="ciudad_editar" name="ciudad_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="cruzamientos_editar" class="col-form-label">Cruzamientos:</label>
+              <input id="cruzamientos_editar" name="cruzamientos_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="telefono_editar" class="col-form-label">Telefono:</label>
+              <input id="telefono_editar" name="telefono_editar" type="number" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="email_editar" class="col-form-label">Email:</label>
               <input id="email_editar" name="email_editar" type="email" class="form-control" value="">
             </div>
             <div class="mb-3">
-              <label for="Telefono_editar" class="col-form-label">Telefono:</label>
-              <input id="Telefono_editar" name="Telefono_editar" type="number" class="form-control" value="">
+              <label for="numContrato_editar" class="col-form-label">Numero de contrato:</label>
+              <input id="numContrato_editar" name="numContrato_editar" type="number" class="form-control" value="">
             </div>
-
-
+            <div class="mb-3">
+              <label for="fechaContratoPrestatario_editar" class="col-form-label">Fecha de contrato:</label>
+              <input id="fechaContratoPrestatario_editar" name="fechaContratoPrestatario_editar" type="date" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="rutaContratoPrestatario_editar" class="col-form-label">Contrato:</label>
+              <input id="rutaContratoPrestatario_editar" name="rutaContratoPrestatario_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="rutaIdentificacion_editar" class="col-form-label">Identificación:</label>
+              <input id="rutaIdentificacion_editar" name="rutaIdentificacion_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="rutaComprobanteDomicilio_editar" class="col-form-label">Comprobante Domicilio:</label>
+              <input id="rutaComprobanteDomicilio_editar" name="rutaComprobanteDomicilio_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="lineaCredito_editar" class="col-form-label">Linea de crédito:</label>
+              <input id="lineaCredito_editar" name="lineaCredito_editar" type="number" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="calificacionCredito_editar" class="col-form-label">Calificación:</label>
+              <input id="calificacionCredito_editar" name="calificacionCredito_editar" type="text" class="form-control" value="">
+            </div>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Actualizar</button>
         </div>
-        </form>
+      </form>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="shadow-lg p-3 mb-5 bg-body rounded">
-      <h4 class="col-md-6">Datos del nuevo usuario</h4>
-      <form action="/admin/crear" method="POST">
+      <h4 class="col-md-6">Datos del nuevo Prestatario</h4>
+      <form action="/adminPrestatario/crear" method="POST">
         <div class="col-md-6" style="display: none">
           <label for="idUsuario" class="form-label">ID</label>
           <input id="idUsuario" name="idUsuario" type="number" class="form-control" required value=<%=lastid %>>
@@ -231,8 +225,9 @@
 
   </div>
   <div class="botonRegistrar">
-    <button type="submit" class="btn btn-guardar btn-lg "><i class="bi bi-save"></i>Registrar Usuario</button>
+    <button type="submit" class="btn btn-guardar btn-lg "><i class="bi bi-save"></i>Registrar Prestatario</button>
   </div>
+
   <footer>
     <%- include('./layouts/footer'); %>
   </footer>
@@ -242,7 +237,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
-  <script src="js/code.js"></script>
+  <script src="js/0-2AdminPrestatario.js"></script>
 </body>
 
 </html>

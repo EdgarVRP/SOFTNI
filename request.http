@@ -20,9 +20,9 @@ Content-Type: application/json
 
 {
 
-  "idUsuario": 1,
-  "idPrestatario": 1,
-  "prestatarioName" : "Juan Perez",
+  "idUsuario": 2,
+  "idPrestatario": 2,
+  "prestatarioName" : "Prestatario 2",
   "rfc" : "JUPR",
   "codigoPostal" : "12345",
   "ciudad" : "CDMX",
