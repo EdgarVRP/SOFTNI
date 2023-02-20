@@ -80,39 +80,7 @@
       <td><input type="checkbox" name="Legal" id="Legal" disabled /></td>
     </tr>
   </table>
-  <!-- Tabla Proyecto  -->
-  <table id="tablaUsuarios" class="table mt-4">
-    <thead>
-      <tr>
-        <th style="display: none;">ID Mongo</th>
-        <th>ID</th>
-        <th>Nombre de usuario</th>
-        <th>password</th>
-        <th>Ultimo Acceso</th>
-        <th>Rol</th>
-        <th>Fecha de Creacion</th>
-        <th>email</th>
-        <th>telefono</th>
-      </tr>
-    </thead>
-    <tbody><% usuarios.forEach( (usuario)=> { %><tr>
-          <td style="display: none;"><%= usuario._id %></td>
-          <td><%= usuario.idUsuario %></td>
-          <td><%= usuario.userName %></td>
-          <td class="hidetext"><%= usuario.password %></td>
-          <td><%= usuario.dateTimeLogin %></td>
-          <td><%= usuario.rolUser %></td>
-          <td><%= usuario.fechaCreacion %></td>
-          <td><%= usuario.email %></td>
-          <td><%= usuario.telefono %></td>
-          <td>
-            <a type="button" class="btnEditar btn btn-outline-primary bi bi-pencil"></a>
-            <a href="/admin/borrar/<%= usuario._id %>" class="btn btn-outline-danger bi bi-trash"></a>
-          </td>
-        </tr>
-        <% }) %>
-    </tbody>
-  </table>
+  
   </div>
   <footer>
     <%- include('./layouts/footer'); %>
