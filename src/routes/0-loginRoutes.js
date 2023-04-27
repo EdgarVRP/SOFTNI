@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 //PANTALLA 2 LOGIN
 router.get('/login', (req, res,next) => {
-    res.render('2-loginView');
+    res.sendFile('0-P-Login.html', { root: './src/views' });
 });
 //Se LOGUEA EL USUARIO
 router.post('/', passport.authenticate('local-signin', {
@@ -13,7 +13,7 @@ router.post('/', passport.authenticate('local-signin', {
 }));
 //PANTALLA 2-1 Solicitud de credito
 router.get('/', (req, res,next) => {
-    res.render('2-1-singupView');
+    res.sendFile('2-P-Solicitud.html', { root: './src/views' });
 });
 
 //PANTALLA 3 Alta en sistema y formalizacion
@@ -66,78 +66,13 @@ router.post('/admin/editar',isAuth, usuarioController.editar)
 //Borrar usuarios (GET)
 router.get('/admin/borrar/:id',isAuth, usuarioController.borrar)
 
-
-
-
 //PANTALLA 2-1-1 Datos recibidos
 /*
 router.get('/registro', (req, res,next) => {
     res.render('2-1-1-datosRecibidos');
 });
 */
-//Pantalla 0-2 admin prestatario
-//Se importa controlador de prestatario
-const prestatarioController = require('../controllers/2-prestatarioController')
-//Mostrar todos los usuarios (GET)
-router.get('/adminPrestatario/', prestatarioController.mostrar)
-//Crear usuarios (POST)
-router.post('/adminPrestatario/crear', prestatarioController.crear)
-//Editar usuarios (POST)
-router.post('/adminPrestatario/editar', prestatarioController.editar)
-//Borrar usuarios (GET)
-router.get('/adminPrestatario/borrar/:id', prestatarioController.borrar)
-
-//Pantalla 0-3 adminProyecto
-//Se importa controlador de Proyecto
-const proyectoController = require('../controllers/2-prestatarioController')
-//Mostrar todos los usuarios (GET)
-router.get('/adminProyecto/', proyectoController.mostrar)
-//Crear usuarios (POST)
-router.post('/adminProyecto/crear', proyectoController.crear)
-//Editar usuarios (POST)
-router.post('/adminProyecto/editar', proyectoController.editar)
-//Borrar usuarios (GET)
-router.get('/adminProyecto/borrar/:id', proyectoController.borrar)
-
-//Pantalla 0-4 adminControl
-//Se importa controlador de Control Técnico
-const ControlController = require('../controllers/2-prestatarioController')
-//Mostrar todos los usuarios (GET)
-router.get('/adminControl/', ControlController.mostrar)
-//Crear usuarios (POST)
-router.post('/adminControl/crear', ControlController.crear)
-//Editar usuarios (POST)
-router.post('/adminControl/editar', ControlController.editar)
-//Borrar usuarios (GET)
-router.get('/adminControl/borrar/:id', ControlController.borrar)
-
-//Pantalla 0-5 adminProveedores
-//Se importa controlador de Proveedores
-const ProveedoresController = require('../controllers/2-prestatarioController')
-//Mostrar todos los usuarios (GET)
-router.get('/adminProveedores/', ProveedoresController.mostrar)
-//Crear usuarios (POST)
-router.post('/adminProveedores/crear', ProveedoresController.crear)
-//Editar usuarios (POST)
-router.post('/adminProveedores/editar', ProveedoresController.editar)
-//Borrar usuarios (GET)
-router.get('/adminProveedores/borrar/:id', ProveedoresController.borrar)
-
-//Pantalla 0-6 adminFacturas
-//Se importa controlador de Facturas
-const FacturasController = require('../controllers/2-prestatarioController')
-//Mostrar todos los usuarios (GET)
-router.get('/adminFacturas/', FacturasController.mostrar)
-//Crear usuarios (POST)
-router.post('/adminFacturas/crear', FacturasController.crear)
-//Editar usuarios (POST)
-router.post('/adminFacturas/editar', FacturasController.editar)
-//Borrar usuarios (GET)
-router.get('/adminFacturas/borrar/:id', FacturasController.borrar)
-
-
-
-
-
-
+router.get('/adminPrestatario',isAuth, (req, res,next) => {
+    res.render('0-2-AdminPrestatario');
+});
 module.exports = router;

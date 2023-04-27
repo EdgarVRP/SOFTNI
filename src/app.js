@@ -1,5 +1,4 @@
 const express=require('express');
-const engine= require('ejs-mate');
 const path=require('path');
 const morgan = require('morgan');
 const passport = require('passport');
@@ -9,15 +8,11 @@ const flash = require('connect-flash');
 const app=express();
 const port = process.env.PORT || 3000;
 //Se invoca conexion a la base de datos
-
 require('./db/1-userDB.js');//conexion CRUD USUARIOS
 require('./passport/local-auth');
 //setting up the server
 //indicando la ruta de las vistas
 app.set('views',path.join(__dirname,'views'));
-app.engine('ejs',engine);
-app.set('view engine','ejs');
-
 //middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
@@ -29,7 +24,7 @@ app.use(session({
     saveUninitialized:false
 }))
 app.use(flash()); //debe ir despues de session y antes de passport
-app.use((express.static(__dirname + '/public')));
+app.use((express.static(__dirname + '/views')));
 app.use(passport.initialize());
 app.use(passport.session());
 

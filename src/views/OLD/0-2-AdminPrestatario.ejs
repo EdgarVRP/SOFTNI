@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Administrador de Prestatarios</title>
+  <link rel="icon" href="./imagenes/LogoCENIDET.jpg" type="image/x-icon" />
+</head>
+
+<body>
+  <header>
+        <%- include('./layouts/AdminNavbar2'); %>
+  </header>
+  <!-- Tabla Usuarios  -->
+  <table id="tablaPrestatario" class="table mt-4">
+    <thead>
+      <tr>
+        <th style="display: none;">ID Mongo</th>
+        <th>ID Usuario</th>
+        <th>ID Prestatario</th>
+        <th>Nombre de Prestatario</th>
+        <th>RFC</th>
+        <th>Codigo Postal</th>
+        <th>Ciudad</th>
+        <th>Dirección</th>
+        <th>Cruzamientos</th>
+        <th>Telefono</th>
+        <th>Email</th>
+        <th>Numero de contrato</th>
+        <th>Fecha de contrato Prestatario</th>
+        <th>Ruta Contrato Prestatario</th>
+        <th>Ruta Identificación</th>
+        <th>Ruta Comprobante Domicilio</th>
+        <th>Linea de crédito</th>
+        <th>Calificación crédito</th>
+      </tr>
+    </thead>
+    
+  </table>
+  <!-- Modal para Editar   -->
+  <div id="modalPrestatario" class="modal fade" tabindex="-1" aria-labelledby="modalUsuario" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/adminPrestatario/editar" method="POST">
+            
+            <input name="id_editar" id="id_editar" type="text" hidden>
+            <div class="mb-3">
+              <label for="idUsuario_editar" class="col-form-label" hidden>ID Usuario:</label>
+              <input id="idUsuario_editar" name="idUsuario_editar" type="number" class="form-control" value="" hidden>
+            </div>
+            <div class="mb-3">
+              <label for="idPrestatario_editar" class="col-form-label" hidden>ID Prestatario:</label>
+              <input id="idPrestatario_editar" name="idPrestatario_editar" type="number" class="form-control" value="" hidden>
+            </div>
+            <div class="mb-3">
+              <label for="prestatarioName_editar" class="col-form-label">Nombre de prestatario:</label>
+              <input id="prestatarioName_editar" name="prestatarioName_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="rfc_editar" class="col-form-label">RFC:</label>
+              <input id="rfc_editar" name="rfc_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="codigoPostal_editar" class="col-form-label">Codigo Postal:</label>
+              <input id="codigoPostal_editar" name="codigoPostal_editar" type="number" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="direccion_editar" class="col-form-label">Dirección:</label>
+              <input id="direccion_editar" name="direccion_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="ciudad_editar" class="col-form-label">Ciudad:</label>
+              <input id="ciudad_editar" name="ciudad_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="cruzamientos_editar" class="col-form-label">Cruzamientos:</label>
+              <input id="cruzamientos_editar" name="cruzamientos_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="telefono_editar" class="col-form-label">Telefono:</label>
+              <input id="telefono_editar" name="telefono_editar" type="number" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="email_editar" class="col-form-label">Email:</label>
+              <input id="email_editar" name="email_editar" type="email" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="numContrato_editar" class="col-form-label">Numero de contrato:</label>
+              <input id="numContrato_editar" name="numContrato_editar" type="number" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="fechaContratoPrestatario_editar" class="col-form-label">Fecha de contrato:</label>
+              <input id="fechaContratoPrestatario_editar" name="fechaContratoPrestatario_editar" type="date" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="rutaContratoPrestatario_editar" class="col-form-label">Contrato:</label>
+              <input id="rutaContratoPrestatario_editar" name="rutaContratoPrestatario_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="rutaIdentificacion_editar" class="col-form-label">Identificación:</label>
+              <input id="rutaIdentificacion_editar" name="rutaIdentificacion_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="rutaComprobanteDomicilio_editar" class="col-form-label">Comprobante Domicilio:</label>
+              <input id="rutaComprobanteDomicilio_editar" name="rutaComprobanteDomicilio_editar" type="text" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="lineaCredito_editar" class="col-form-label">Linea de crédito:</label>
+              <input id="lineaCredito_editar" name="lineaCredito_editar" type="number" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+              <label for="calificacionCredito_editar" class="col-form-label">Calificación:</label>
+              <input id="calificacionCredito_editar" name="calificacionCredito_editar" type="text" class="form-control" value="">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Actualizar</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="botonRegistrar">
+    <button type="submit" class="btn btn-guardar btn-lg "><i class="bi bi-save"></i>Registrar Prestatario</button>
+  </div>
+
+  <footer>
+    <%- include('./layouts/footer'); %>
+  </footer>
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <script src="js/0-2AdminPrestatario.js"></script>
+</body>
+
+</html>
