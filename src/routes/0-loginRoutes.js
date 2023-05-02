@@ -42,20 +42,20 @@ router.get('/solicitud', (req, res,next) => {
 });
 
 //PANTALLA 3-P Alta de credito
-router.get('/Alta', (req, res,next) => {
+router.get('/Alta',isAuth, (req, res,next) => {
     res.sendFile('3-P-Alta.html', { root: './src/views' });
 });
 
 //PANTALLA 0-1 ADMIN USUARIO ADMINISTRADOR USUARIO
 const usuarioController = require('../controllers/1-userController')
 //Mostrar todos los usuarios (GET)
-router.get('/admin/',isAuth, usuarioController.mostrar)
+router.get('/usuarios',isAuth, usuarioController.mostrar)
 //Crear usuarios (POST)
-router.post('/admin/crear',isAuth, usuarioController.crear)
+router.post('/usuarios/crear',isAuth, usuarioController.crear)
 //Editar usuarios (POST)
-router.post('/admin/editar',isAuth, usuarioController.editar)
+router.post('/usuarios/editar',isAuth, usuarioController.editar)
 //Borrar usuarios (GET)
-router.get('/admin/borrar/:id',isAuth, usuarioController.borrar)
+router.get('/usuarios/borrar/:id',isAuth, usuarioController.borrar)
 
 
 module.exports = router;

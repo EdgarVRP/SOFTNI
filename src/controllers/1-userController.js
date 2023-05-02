@@ -8,7 +8,7 @@ module.exports.mostrar = (req, res)=>{
             })
         }
         //console.log(usuarios.length)
-        return res.render('0-1-userView',
+        return res.render('5-P-1-AdminUsuarios',
          {total: usuarios.length+1, usuarios: usuarios,
              lastid: 1+usuarios[usuarios.length-1].idUsuario})
     })
@@ -35,7 +35,7 @@ module.exports.crear = (req, res)=>{
                 message: 'Error al crear el Usuario'+error
             })
         }
-        res.redirect('/admin')
+        res.redirect('/usuarios')
     })
 }
 
@@ -59,7 +59,7 @@ module.exports.editar = (req,res)=>{
                 message: 'Error actualizando el usuario',error
             })
         }
-        res.redirect('/admin')
+        res.redirect('/usuarios')
     })
 }
 
@@ -72,6 +72,6 @@ module.exports.borrar = (req, res)=>{
                 message: 'Error eliminando el Usuario'
             })
         }
-        res.redirect('/admin')
+        res.redirect('/usuarios')
     })
 }

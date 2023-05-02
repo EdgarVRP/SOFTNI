@@ -1,0 +1,7 @@
+  /*Ocultando passwords*/
+  .hidetext { -webkit-text-security: circle; }
+  /*Estilos para administrador de usuarios*/
+  .col-md-6{
+    margin: 0 auto;
+  }
+  .botonRegistrar{text-align: center;}

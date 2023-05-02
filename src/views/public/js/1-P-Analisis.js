@@ -152,75 +152,75 @@ btnScore.addEventListener("click", (e) => {
   btnFinAnalisisAceptado.disabled = false;
 });
 
-
 //El crédito es negado
 btnFinAnalisisNegado.addEventListener("click", (e) => {
-    e.preventDefault();
-    const idPrestatario = document.getElementById("NumSolicitud").value;
-    const score = document.getElementById("Score").value;
-    const ingresoMensual = document.getElementById("ingresoMensual").value;
-    //Se hace peticion put para actualizar el estado del prestatario
-    fetch(URL_Backend_prestatario + `adminPrestatario/${idPrestatario}`, {
-        method: "PUT",
-        body: JSON.stringify({
-            idPrestatario: parseInt(idPrestatario),
-            score: parseInt(score),
-            ingresoMensual: parseInt(ingresoMensual),
-            procesoAnalisis: true,
-            creditoAceptado: false
-        }),
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-        },
-        })
-        .then((res) => {
-            alert("Se denego el credito");
-            //return res.json();
-        })
-        .then((data) => {
-            //console.log(data);
-            //alert(data.message);
-            console.log("Se actualizo el prestatario");
-            window.location.href = './Alta';
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+  e.preventDefault();
+  const idPrestatario = document.getElementById("NumSolicitud").value;
+  const score = document.getElementById("Score").value;
+  const ingresoMensual = document.getElementById("ingresoMensual").value;
+  //Se usa el servicio SyncEvaluacion
+  fetch(URL_Backend_evaluacion + `Evaluaciones`, {
+    method: "POST",
+    body: JSON.stringify({
+      idPrestatario: parseInt(idPrestatario),
+      nombre: inputName.value,
+      ingreso_Mensual: parseInt(ingresoMensual),
+      puntuacion_credito: parseInt(score),
+      creditoAceptado: false,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
+    .then((res) => {
+      alert("Se denego el credito");
+      //return res.json();
+    })
+    .then((data) => {
+      //console.log(data);
+      //alert(data.message);
+      console.log("Se actualizo el prestatario");
+      window.location.href = "./Alta";
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 //El crédito es aceptado
 btnFinAnalisisAceptado.addEventListener("click", (e) => {
-    e.preventDefault();
-    const idPrestatario = document.getElementById("NumSolicitud").value;
-    const score = document.getElementById("Score").value;
-    const ingresoMensual = document.getElementById("ingresoMensual").value;
-    //Se hace peticion put para actualizar el estado del prestatario
-    fetch(URL_Backend_prestatario + `adminPrestatario/${idPrestatario}`, {
-        method: "PUT",
-        body: JSON.stringify({
-            idPrestatario: parseInt(idPrestatario),
-            score: parseInt(score),
-            ingresoMensual: parseInt(ingresoMensual),
-            procesoAnalisis: true,
-            creditoAceptado: true
-        }),
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-        },
-        })
-        .then((res) => {
-            alert("Se actualizo el prestatario");
-            //return res.json();
-        })
-        .then((data) => {
-            //console.log(data);
-            //alert(data.message);
-            console.log("Se actualizo el prestatario");
-            window.location.href = './Alta';
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+  e.preventDefault();
+  const idPrestatario = document.getElementById("NumSolicitud").value;
+  const score = document.getElementById("Score").value;
+  const ingresoMensual = document.getElementById("ingresoMensual").value;
+  //Se hace peticion put para actualizar el estado del prestatario
+  let evaluacion = {
+    idPrestatario: parseInt(idPrestatario),
+    nombre: inputName.value,
+    ingreso_Mensual: parseInt(ingresoMensual),
+    puntuacion_credito: parseInt(score),
+    creditoAceptado: true,
+  };
+  fetch(URL_Backend_evaluacion + `Evaluaciones`, {
+    method: "POST",
+    body: JSON.stringify(evaluacion),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+  })
+    .then((res) => {
+      alert("Se acepto el credito");
+      //return res.json();
+    })
+    .then((data) => {
+      //console.log(data);
+      //alert(data.message);
+      console.log("Se actualizo el prestatario");
+      window.location.href = "./Alta";
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
