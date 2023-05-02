@@ -53,18 +53,18 @@
                     style="color: #ffffff"
                   ></span>
                 </button>
-                
+
                 <div class="row">
-                  <h1 class="text-center">SOFOM</h1>
+                  <h1 class="text-center">SOFOM - Solicitud de Crédito</h1>
                   <div class="collapse navbar-collapse" id="pages">
                     <ul class="navbar-nav ms-auto">
                       <li id="nav-home" class="nav-item">
-                        <a class="nav-link" href="./home"
-                          >Inicio</a
-                        >
+                        <a class="nav-link" href="./">Inicio</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="./Analisis">Analisis de Crédito</a>
+                        <a class="nav-link" href="./Analisis"
+                          >Analisis de Crédito</a
+                        >
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="./Solicitud"
@@ -75,12 +75,84 @@
                         <a class="nav-link" href="./Alta">Alta en sistema</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="./indicadores.html">Indicadores</a>
-                      </li>
-                      <li class="nav-item">
-                        <a id="nav-user" class="nav-link" href="./login.html"
-                          >Ingresar</a
+                        <a class="nav-link" href="./indicadores.html"
+                          >Indicadores</a
                         >
+                      </li>
+                       <!-- Se añade Admin que mostrara menu desplegable de Usuarios, Prestatarios y Proyectos -->
+                       <li class="nav-item dropdown">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Admin
+                        </a>
+                        <ul
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./usuarios"
+                              >Usuarios</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./prestatarios"
+                              >Prestatarios</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./proyectos"
+                              >Proyectos</a
+                            >
+                          </li>
+                        </ul>
+                      <!-- Se añade perfil que mostrara menu desplegable de ingresar y salir -->
+                      <li class="nav-item dropdown">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Perfil
+                        </a>
+                        <ul
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./login"
+                              >Ingresar</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./logout"
+                              >Salir</a
+                            >
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   </div>
@@ -91,6 +163,9 @@
                   alt="Logo"
                   class="imgheader2"
                 />
+                <li class="nav-item">
+                  <a id="nav-user" class="nav-link" href="./logout">Salir</a>
+                </li>
               </div>
             </nav>
           </div>
@@ -113,7 +188,13 @@
               <h2>Registro</h2>
               <div class="registroDatos">
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" placeholder="Nombre" id="name" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre"
+                  id="name"
+                  required
+                />
               </div>
               <div class="registroDatos">
                 <label for="rfc">RFC:</label>
@@ -122,6 +203,7 @@
                   name="rfc"
                   placeholder="RFC4567890"
                   id="rfc"
+                  required
                 />
               </div>
               <div class="registroDatos">
@@ -131,6 +213,7 @@
                   name="cp"
                   placeholder="Codigo Postal"
                   id="cp"
+                  required
                 />
               </div>
               <div class="registroDatos">
@@ -140,6 +223,7 @@
                   name="ciudad"
                   placeholder="Ciudad"
                   id="ciudad"
+                  required
                 />
               </div>
               <div class="registroDatos">
@@ -149,6 +233,7 @@
                   name="direccion"
                   placeholder="Dirección"
                   id="direccion"
+                  required
                 />
               </div>
               <div class="registroDatos">
@@ -158,6 +243,7 @@
                   name="direccion2"
                   placeholder="Cruzamientos"
                   id="direccion2"
+                  required
                 />
               </div>
               <div class="registroDatos">
@@ -167,6 +253,7 @@
                   name="telefono"
                   placeholder="Teléfono"
                   id="telefono"
+                  required
                 />
               </div>
               <div class="registroDatos">
@@ -176,12 +263,13 @@
                   name="email"
                   placeholder="Correo@correo.com"
                   id="email"
+                  required
                 />
               </div>
               <div class="botonesFormRegistro">
                 <a href="/login">Iniciar Sesión</a>
                 <button type="button" id="btnlimpiar">Limpiar</button>
-                <button type="submit">Registrarse</button>
+                <button type="submit" id="btnregistrar">Registrarse</button>
               </div>
             </form>
           </div>

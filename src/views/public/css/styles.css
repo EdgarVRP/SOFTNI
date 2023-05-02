@@ -6,6 +6,9 @@ header{
 .nav-link{
   color: #fff;
 }
+.nav-link:hover{
+  color: yellow;
+}
 @media screen and (max-width: 768px) {
   .imgheader{
     display: none;
@@ -35,4 +38,8 @@ footer{
 }
 .btn-guardar:focus{
   box-shadow:0 0 0 3px rgba(121,82,179,0.25)
+}
+.navbar-nav{
+text-align: center;
+margin: 0 auto;
 }

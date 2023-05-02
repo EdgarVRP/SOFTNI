@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto SOFOM</title>
+    <!-- Bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <!-- General CSS -->
+    <link rel="stylesheet" href="./public/css/styles.css" />
+    <link
+      rel="icon"
+      href="./public/imagenes/LogoCENIDET.jpg"
+      type="image/x-icon"
+    />
+    <!-- Particular CSS -->
+    <link rel="stylesheet" href="./public/css/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <!-- Menu de hamburguesa -->
+            <nav class="navbar fixed-top navbar-expand-md sticky-top">
+              <div class="container-fluid">
+                <img
+                  id="logo-navbar"
+                  src="./public/imagenes/LogoTecNM.jpg"
+                  alt="Logo TecNM"
+                  class="imgheader"
+                />
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#pages"
+                  style="background-color: #ffffff"
+                >
+                  <span
+                    class="navbar-toggler-icon"
+                    style="color: #ffffff"
+                  ></span>
+                </button>
+
+                <div class="row">
+                  <h1 class="text-center">SOFOM</h1>
+                  <div class="collapse navbar-collapse" id="pages">
+                    <ul class="navbar-nav ms-auto">
+                      <li id="nav-home" class="nav-item">
+                        <a class="nav-link" href="./">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./Analisis"
+                          >Analisis de Crédito</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./Solicitud"
+                          >Solicitud de crédito</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./Alta">Alta en sistema</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./indicadores">Indicadores</a>
+                      </li>
+                       <!-- Se añade Admin que mostrara menu desplegable de Usuarios, Prestatarios y Proyectos -->
+                       <li class="nav-item dropdown">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Admin
+                        </a>
+                        <ul
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./usuarios"
+                              >Usuarios</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./prestatarios"
+                              >Prestatarios</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./proyectos"
+                              >Proyectos</a
+                            >
+                          </li>
+                        </ul>
+                      <!-- Se añade perfil que mostrara menu desplegable de ingresar y salir -->
+                      <li class="nav-item dropdown">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Perfil
+                        </a>
+                        <ul
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./login"
+                              >Ingresar</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              id="nav-user"
+                              class="dropdown-item"
+                              href="./logout"
+                              >Salir</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <img
+                  id="logo-navbar"
+                  src="./public/imagenes/LogoCENIDET.jpg"
+                  alt="Logo"
+                  class="imgheader2"
+                />
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mainindex">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h1 class="text-center">
+              Tesis de Maestría: Marco de Servicios para entidades SOFOM
+            </h1>
+            <h2>El mapa de navegación del sitio es el siguiente:</h2>
+            <img
+              src="./public/imagenes/home/MapaNavegacion.png"
+              alt="Mapa de Navegacion"
+              id="MapaNavegacion"
+              class="img-fluid img-max-height-70vh"
+              style="max-height: 800px"
+            />
+            <h1>Introducción</h1>
+            <h2>Descripción del problema</h2>
+            <p>
+              La operación de una firma financiera (en este caso Sociedades
+              Financieras de Objeto Múltiple (SOFOM)) es compleja debido a la
+              gran cantidad de información y procesos involucrados. Los
+              diferentes procesos pueden requerir diferentes herramientas y esas
+              herramientas deben convivir por medio del intercambio de
+              información. Sin embargo, se observa que existe una dependencia de
+              herramientas tecnológicas por parte de las SOFOMES, las cuales no
+              permiten el óptimo flujo de información, el problema se presenta
+              cuando algunas herramientas tecnológicas o sistemas de información
+              no pueden integrarse fácilmente y por lo tanto no generan la
+              información requerida para la operación de la firma financiera.
+            </p>
+            <h2>Objetivo general</h2>
+            <p>
+              El objetivo general de este proyecto es realizar una integración
+              de procesos de negocio en el dominio de las SOFOMES utilizando
+              servicios Web.
+            </p>
+            <h3>Objetivos específicos</h3>
+            <p>
+              Los objetivos específicos que se plantearon para este trabajo de
+              tesis son:
+            </p>
+            <ol>
+              <li>Documentar procesos de negocios del dominio de SOFOM.</li>
+              <li>
+                Eliminar la dependencia entre procesos de negocio y las
+                herramientas que se emplean.
+              </li>
+            </ol>
+            <h2>Alcances</h2>
+            <ol>
+              <li>Identificar los procesos de la SOFOM.</li>
+              <li>
+                Analizar los procesos para extraer los requerimientos de
+                información.
+              </li>
+              <li>
+                Analizar, diseñar e implementar un conjunto de servicios que
+                atienda a los procesos.
+              </li>
+            </ol>
+            <h2>Limitaciones</h2>
+            <p>
+              Debido a la cantidad de procesos de una SOFOM y la cantidad de
+              tareas que corresponden a cada proceso, se implementarán los
+              servicios que el tiempo permita, es decir, no se implementarán
+              todos los servicios identificados.
+            </p>
+          </div>
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h2>Metodología de solución</h2>
+            <img
+              src="./public/imagenes/home/Imagen1.png"
+              alt="Logo Propuesta Solucion"
+              id="LogoPropuestaSolucion"
+              class="img-fluid img-max-height-70vh"
+            />
+          </div>
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h1>Documentación de procesos de negocio</h1>
+            <h2>Procesos de Negocio:</h2>
+            <img
+              src="./public/imagenes/home/Imagen2.png"
+              alt="Procesos de Negocio"
+              id="ProcesosNegocio"
+              class="img-fluid img-max-height-70vh"
+            />
+          </div>
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h2>Especificación de Requerimientos</h2>
+            <!-- Tabla 9 x 3 -->
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>R01</td>
+                  <td>
+                    El proceso de análisis y calificación del crédito debe poder
+                    acceder a los datos de los prestatarios.
+                  </td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>R02</td>
+                  <td>
+                    El proceso de Alta en sistemas y formalización debe poder
+                    acceder a los datos de los prestatarios.
+                  </td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>R03</td>
+                  <td>
+                    El proceso de Alta en sistemas y formalización debe poder
+                    acceder a la evaluación de crédito.
+                  </td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>R04</td>
+                  <td>
+                    El responsable del proceso de Seguimiento de Crédito debe
+                    poder acceder a los datos de los prestatarios.
+                  </td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td>R05</td>
+                  <td>
+                    El sistema deberá mostrar al usuario el contrato del
+                    prestatario para su consulta.
+                  </td>
+                </tr>
+                <tr>
+                  <th>6</th>
+                  <td>R06</td>
+                  <td>
+                    El sistema deberá mostrar al usuario el contrato del
+                    proyecto para su consulta
+                  </td>
+                </tr>
+                <tr>
+                  <th>7</th>
+                  <td>R07</td>
+                  <td>
+                    El responsable del proceso de Seguimiento de Crédito debe
+                    poder acceder a los datos del proyecto.
+                  </td>
+                </tr>
+                <tr>
+                  <th>8</th>
+                  <td>R08</td>
+                  <td>
+                    El sistema deberá mostrar los indicadores del proceso “Alta
+                    en sistema y formalización” de acuerdo al anexo “Procesos de
+                    negocio Seguimiento de crédito SOFOM” documentación del
+                    proceso – indicadores.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h2>Analisis</h2>
+            <p>
+              A partir de los requerimientos se procedió a la etapa de análisis
+              en donde se realizó un diagrama de casos de uso como se muestra en
+              la siguiente figura:
+            </p>
+            <img
+              src="./public/imagenes/home/CasosUso.png"
+              alt="Casos de Uso"
+              id="CasosUsoImg"
+              class="img-fluid img-max-height-70vh"
+            />
+            <p>
+              A continuacion se explica unicamente el Caso de Uso 1 en la
+              siguiente tabla:
+            </p>
+            <img
+              src="./public/imagenes/home/CasoUsoTabla.png"
+              alt="Casos de Uso Tabla"
+              id="CasosUsoTablaImg"
+              class="img-fluid img-max-height-70vh"
+            />
+          </div>
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h2>Diseño</h2>
+            <p>
+              Se elaboraron cinco diagramas de clases para el diseño de los
+              servicios
+            </p>
+            <img
+              src="./public/imagenes/home/Clases.png"
+              alt="Diagrama de clases"
+              id="DiagramaClases"
+              class="img-fluid img-max-height-70vh"
+            />
+            <p>
+              Tambien para el proyecto se realizo un diagrama de despliegue:
+            </p>
+            <img
+              src="./public/imagenes/home/Despliegue.png"
+              alt="Diagrama de despliegue"
+              id="DiagramaDespliegue"
+              class="img-fluid img-max-height-70vh"
+            />
+          </div>
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h2>Codificación del marco de servicios web</h2>
+            <p>Las tecnologias utilizadas son:</p>
+            <ol>
+              <li>JavaScript</li>
+              <li>NodeJS</li>
+              <li>Express</li>
+              <li>MongoDB</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Bootstrap</li>
+              <li>Java</li>
+              <li>Spring Boot</li>
+              <li>Python</li>
+              <li>Flask</li>
+            </ol>
+          </div>
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <h2>Pruebas y Resultados</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-xl-12 text-center">
+            <a href="https://github.com/EdgarVRP">
+              <p class="Copyright">SOFTNI&copy By EdgarVRP</p>
+            </a>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-guardar btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Aviso de Privacidad
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Aviso de Privacidad
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <label for="userName_editar" class="col-form-label">
+                      POLÍTICA DE COOKIES El acceso a este Sitio Web puede
+                      implicar la utilización de cookies. Las cookies son
+                      pequeñas cantidades de información que se almacenan en el
+                      navegador utilizado por cada Usuario —en los distintos
+                      dispositivos que pueda utilizar para navegar— para que el
+                      servidor recuerde cierta información que posteriormente y
+                      únicamente el servidor que la implementó leerá. Las
+                      cookies facilitan la navegación, la hacen más amigable, y
+                      no dañan el dispositivo de navegación. Las cookies son
+                      procedimientos automáticos de recogida de información
+                      relativa a las preferencias determinadas por el Usuario
+                      durante su visita al Sitio Web con el fin de reconocerlo
+                      como Usuario, y personalizar su experiencia y el uso del
+                      Sitio Web, y pueden también, por ejemplo, ayudar a
+                      identificar y resolver errores. La información recabada a
+                      través de las cookies puede incluir la fecha y hora de
+                      visitas al Sitio Web, las páginas visionadas, el tiempo
+                      que ha estado en el Sitio Web y los sitios visitados justo
+                      antes y después del mismo. Sin embargo, ninguna cookie
+                      permite que esta misma pueda contactarse con el número de
+                      teléfono del Usuario o con cualquier otro medio de
+                      contacto personal. Ninguna cookie puede extraer
+                      información del disco duro del Usuario o robar información
+                      personal. La única manera de que la información privada
+                      del Usuario forme parte del archivo Cookie es que el
+                      usuario dé personalmente esa información al servidor. Las
+                      cookies que permiten identificar a una persona se
+                      consideran datos personales. Por tanto, a las mismas les
+                      será de aplicación la Política de Privacidad anteriormente
+                      descrita. En este sentido, para la utilización de las
+                      mismas será necesario el consentimiento del Usuario. Este
+                      consentimiento será comunicado, en base a una elección
+                      auténtica, ofrecido mediante una decisión afirmativa y
+                      positiva, antes del tratamiento inicial, removible y
+                      documentado. Cookies propias Son aquellas cookies que son
+                      enviadas al ordenador o dispositivo del Usuario y
+                      gestionadas exclusivamente por SOFOM CENIDET para el mejor
+                      funcionamiento del Sitio Web. La información que se recaba
+                      se emplea para mejorar la calidad del Sitio Web y su
+                      Contenido y su experiencia como Usuario. Estas cookies
+                      permiten reconocer al Usuario como visitante recurrente
+                      del Sitio Web y adaptar el contenido para ofrecerle
+                      contenidos que se ajusten a sus preferencias.
+                      Deshabilitar, rechazar y eliminar cookies El Usuario puede
+                      deshabilitar, rechazar y eliminar las cookies —total o
+                      parcialmente— instaladas en su dispositivo mediante la
+                      configuración de su navegador (entre los que se
+                      encuentran, por ejemplo, Chrome, Firefox, Safari,
+                      Explorer). En este sentido, los procedimientos para
+                      rechazar y eliminar las cookies pueden diferir de un
+                      navegador de Internet a otro. En consecuencia, el Usuario
+                      debe acudir a las instrucciones facilitadas por el propio
+                      navegador de Internet que esté utilizando. En el supuesto
+                      de que rechace el uso de cookies —total o parcialmente—
+                      podrá seguir usando el Sitio Web, si bien podrá tener
+                      limitada la utilización de algunas de las prestaciones del
+                      mismo. Este documento de Política de Cookies ha sido
+                      creado mediante el generador de plantilla de política de
+                      cookies online el día 27/11/2022.
+                    </label>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <!-- Script Bootstrap 5.3 -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Script General -->
+  <script src="./public/js/script.js"></script>
+  <script src="./public/js/index.js"></script>
+</html>

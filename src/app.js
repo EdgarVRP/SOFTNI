@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
 const flash = require('connect-flash');
+//se importa ejs
+const ejs=require('ejs');
 //inicializaciones
 const app=express();
 const port = process.env.PORT || 3000;
@@ -14,6 +16,7 @@ require('./passport/local-auth');
 //indicando la ruta de las vistas
 app.set('views',path.join(__dirname,'views'));
 //middlewares
+app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
