@@ -5,6 +5,7 @@ const btnFinAnalisisNegado = document.getElementById("btnFinAnalisisNegado");
 const btnFinAnalisisAceptado = document.getElementById(
   "btnFinAnalisisAceptado"
 );
+const idPrestatario = document.getElementById("NumSolicitud");
 //Se importan los inputs del formulario
 const inputName = document.getElementById("name");
 const inputRFC = document.getElementById("rfc");
@@ -14,7 +15,34 @@ const inputDireccion = document.getElementById("direccion");
 const inputDireccion2 = document.getElementById("direccion2");
 const inputTelefono = document.getElementById("telefono");
 const inputEmail = document.getElementById("email");
-let prestatariolocal = {};
+const inputAnalisis = document.getElementById("analisis");
+const inputScore = document.getElementById("score");
+const inputingresoMensual = document.getElementById("ingresoMensual");
+
+//inputs carga documentos prestatario
+const inputidentificacion = document.getElementById("identificacion");
+const inputcontratoPrestatario = document.getElementById("contratoPrestatario");
+const inputestadoFinanciero = document.getElementById("estadoFinanciero");
+const inputcomprobanteDomicilio = document.getElementById(
+  "comprobanteDomicilio"
+);
+const btnlimpiarDatos1 = document.getElementById("btnLimpiarForm1");
+const btnCargarArchivos1 = document.getElementById("btnGuardarPrestatario");
+
+//Inputs sobre el proyecto
+
+const inputprojectName = document.getElementById("projectName");
+const inputnumContratoPrestatario = document.getElementById(
+  "numContratoPrestatario"
+);
+const inputtotalCredito = document.getElementById("totalCredito");
+const inputtasaInteres = document.getElementById("tasaInteres");
+const inputplazoCredito = document.getElementById("plazoCredito");
+const inputnumProveedores = document.getElementById("numProveedores");
+const inputdiaPago = document.getElementById("diaPago");
+const inputrutaContrato = document.getElementById("rutaContrato");
+const btnGuardarProyecto = document.getElementById("btnGuardarProyecto");
+const btnLimpiarForm2 = document.getElementById("btnLimpiarForm2");
 
 function consultarPrestatario(idPrestatario) {
   fetch(
@@ -31,6 +59,40 @@ function consultarPrestatario(idPrestatario) {
       return res.json();
     })
     .then((data) => {
+      //console.log(URL_Backend_evaluacion + `Evaluaciones/${idPrestatario}`);
+      //Se hace fetch de los datos del analisis
+      fetch(URL_Backend_evaluacion + `Evaluaciones/${idPrestatario}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          //console.log(data);
+          inputAnalisis.value = data.aprobado;
+          inputScore.value = data.puntuacion_credito;
+          inputingresoMensual.value = data.ingreso_mensual;
+          //Si el estado del analisis es aprobado se habilita lo siguiente
+          if (data.aprobado == true) {
+            inputidentificacion.disabled = false;
+            inputcontratoPrestatario.disabled = false;
+            inputestadoFinanciero.disabled = false;
+            inputcomprobanteDomicilio.disabled = false;
+            document.getElementById("NumSolicitud").disabled = true;
+            btnBuscarPrestatario.disabled = true;
+            btnlimpiarDatos1.disabled = false;
+            btnCargarArchivos1.disabled = false;
+          } else {
+          }
+        })
+        .catch((err) => {
+          alert("Aun no se ha realizado el analisis");
+        });
+
       //console.log(data);
       //alert(data.message);
       //window.location.href = './home';
@@ -44,19 +106,6 @@ function consultarPrestatario(idPrestatario) {
       inputDireccion2.value = data.prestatario[0].cruzamientos;
       inputTelefono.value = data.prestatario[0].telefono;
       inputEmail.value = data.prestatario[0].email;
-      prestatariolocal = {
-        idPrestatario: data.prestatario[0].idPrestatario,
-        prestatarioName: data.prestatario[0].prestatarioName,
-        rfc: data.prestatario[0].rfc,
-        codigoPostal: data.prestatario[0].codigoPostal,
-        ciudad: data.prestatario[0].ciudad,
-        direccion: data.prestatario[0].direccion,
-        cruzamientos: data.prestatario[0].cruzamientos,
-        telefono: data.prestatario[0].telefono,
-        email: data.prestatario[0].email,
-      };
-      //console.log("Prestatario local")
-      //console.log(prestatariolocal);
     })
     .catch((err) => {
       console.log(err);
@@ -74,99 +123,37 @@ function consultarPrestatario(idPrestatario) {
 
 btnBuscarPrestatario.addEventListener("click", (e) => {
   e.preventDefault();
-  const idPrestatario = document.getElementById("NumSolicitud").value;
-  consultarPrestatario(idPrestatario);
+  consultarPrestatario(idPrestatario.value);
 });
 
-btnValidarDatos.addEventListener("click", (e) => {
+btnCargarArchivos1.addEventListener("click", (e) => {
   e.preventDefault();
-  const idPrestatario = document.getElementById("NumSolicitud").value;
-  prestatario = {
-    //convirtiendo de cadena a numero
-    idPrestatario: parseInt(idPrestatario),
-    //idPrestatario: idPrestatario,
-    prestatarioName: inputName.value,
-    rfc: inputRFC.value,
-    codigoPostal: parseInt(inputCP.value),
-    ciudad: inputCiudad.value,
-    direccion: inputDireccion.value,
-    cruzamientos: inputDireccion2.value,
-    telefono: parseInt(inputTelefono.value),
-    email: inputEmail.value,
-  };
-  //Actualizar si es el caso
-  if (JSON.stringify(prestatariolocal) == JSON.stringify(prestatario)) {
-    alert("No se realizaron cambios");
-  } else {
-    //console.log(prestatariolocal);
-    //console.log(prestatario);
-    fetch(URL_Backend_prestatario + `adminPrestatario/${idPrestatario}`, {
-      method: "PUT",
-      body: JSON.stringify(prestatario),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((res) => {
-        alert("Se actualizo el prestatario");
-        //return res.json();
-      })
-      .then((data) => {
-        //console.log(data);
-        //alert(data.message);
-        console.log("Se actualizo el prestatario");
-        //window.location.href = './home';
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-  //Deshabilitando inputs
-  inputName.disabled = true;
-  inputRFC.disabled = true;
-  inputCP.disabled = true;
-  inputCiudad.disabled = true;
-  inputDireccion.disabled = true;
-  inputDireccion2.disabled = true;
-  inputTelefono.disabled = true;
-  inputEmail.disabled = true;
-  //Deshabilitando botones
-  btnValidarDatos.disabled = true;
-  btnBuscarPrestatario.disabled = true;
-  //Habilitando
-  btnScore.disabled = false;
-});
-
-btnScore.addEventListener("click", (e) => {
-  e.preventDefault();
-  //Simulando el score de 300 a 850 y el ingreso mensual de 10,000 a 100,000
-  const score = Math.floor(Math.random() * (850 - 300)) + 300;
-  const ingresoMensual = Math.floor(Math.random() * (100000 - 10000)) + 10000;
-  document.getElementById("Score").value = score;
-  document.getElementById("ingresoMensual").value = ingresoMensual;
-  //Deshabilitando botones
-  btnScore.disabled = true;
-  //Habilitando
-  btnFinAnalisisNegado.disabled = false;
-  btnFinAnalisisAceptado.disabled = false;
-});
-
-//El crédito es negado
-btnFinAnalisisNegado.addEventListener("click", (e) => {
-  e.preventDefault();
-  const idPrestatario = document.getElementById("NumSolicitud").value;
-  const score = document.getElementById("Score").value;
-  const ingresoMensual = document.getElementById("ingresoMensual").value;
-  //Se usa el servicio SyncEvaluacion
-  fetch(URL_Backend_evaluacion + `Evaluaciones`, {
-    method: "POST",
+  cargarArchivo(
+    inputidentificacion,
+    idPrestatario.value + "-identificacion.pdf"
+  );
+  cargarArchivo(
+    inputcontratoPrestatario,
+    idPrestatario.value + "-contratoPrestatario.pdf"
+  );
+  cargarArchivo(
+    inputestadoFinanciero,
+    idPrestatario.value + "-estadoFinanciero.pdf"
+  );
+  cargarArchivo(
+    inputcomprobanteDomicilio,
+    idPrestatario.value + "-comprobanteDomicilio.pdf"
+  );
+  alert("Archivos cargados correctamente");
+  //Se actualizan las rutas de los archivos en la base de datos
+  fetch(URL_Backend_prestatario + `adminPrestatario/${idPrestatario.value}`, {
+    method: "PUT",
     body: JSON.stringify({
-      idPrestatario: parseInt(idPrestatario),
-      nombre: inputName.value,
-      ingreso_Mensual: parseInt(ingresoMensual),
-      puntuacion_credito: parseInt(score),
-      creditoAceptado: false,
+      rutaIdentificacion: idPrestatario.value + "-identificacion.pdf",
+      rutaContratoPrestatario: idPrestatario.value + "-contratoPrestatario.pdf",
+      rutaEstadoFinanciero: idPrestatario.value + "-estadoFinanciero.pdf",
+      rutaComprobanteDomicilio:
+        idPrestatario.value + "-comprobanteDomicilio.pdf",
     }),
     headers: {
       "Content-Type": "application/json",
@@ -174,53 +161,108 @@ btnFinAnalisisNegado.addEventListener("click", (e) => {
     },
   })
     .then((res) => {
-      alert("Se denego el credito");
-      //return res.json();
+      return res.json();
     })
     .then((data) => {
       //console.log(data);
       //alert(data.message);
-      console.log("Se actualizo el prestatario");
-      window.location.href = "./Alta";
+      //window.location.href = './home';
     })
     .catch((err) => {
       console.log(err);
+      alert("No se pudo actualizar la informacion");
+    });
+  //Deshabilitar inputs
+  inputidentificacion.disabled = true;
+  inputcontratoPrestatario.disabled = true;
+  inputestadoFinanciero.disabled = true;
+  inputcomprobanteDomicilio.disabled = true;
+  btnlimpiarDatos1.disabled = true;
+  btnCargarArchivos1.disabled = true;
+  //Habilitar inputs proyecto
+  inputprojectName.disabled = false;
+  inputnumContratoPrestatario.disabled = false;
+  inputtotalCredito.disabled = false;
+  inputtasaInteres.disabled = false;
+  inputplazoCredito.disabled = false;
+  inputnumProveedores.disabled = false;
+  inputdiaPago.disabled = false;
+  inputrutaContrato.disabled = false;
+  btnGuardarProyecto.disabled = false;
+  btnLimpiarForm2.disabled = false;
+});
+
+function cargarArchivo(inputFile, nombre) {
+  const formData = new FormData();
+  //formData.append("file", file.files[0]);
+  formData.append("file", inputFile.files[0], nombre);
+  //formData.append("nombreArchivo", "mi_nombre_de_archivo");
+  formData;
+  fetch(URL_Backend_files + "upload", {
+    method: "POST",
+    body: formData,
+  })
+    .then((res) => res.text())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+}
+
+//Se carga la informacion del proyecto
+btnGuardarProyecto.addEventListener("click", (e) => {
+  e.preventDefault();
+  //Se carga el archivo del contrato del proyecto
+  cargarArchivo(inputrutaContrato, idPrestatario.value + "-contrato.pdf");
+  //
+  //Se construye objeto proyecto
+  const proyecto = {idProyecto: idPrestatario.value,
+    projectName: inputprojectName.value,
+    numContrato: inputnumContratoPrestatario.value,
+    //Se agrega la fecha del contrato del proyecto de a cuerdo a la fecha del registro
+    fechaContratoProyecto: new Date().toISOString().slice(0, 10),
+    totalCredito: inputtotalCredito.value,
+    tasaInteres: inputtasaInteres.value,
+    plazoCredito: inputplazoCredito.value,
+    numProveedores: inputnumProveedores.value,
+    diaPago: inputdiaPago.value,
+    rutaContrato: idPrestatario.value + "-contrato.pdf"
+  };
+
+  console.log(proyecto);
+
+  //Se hace fetch de los datos del proyecto
+  fetch(URL_Backend_proyecto + `proyectos`, {
+    method: "POST",
+    body: JSON.stringify(proyecto),
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    }
+  })
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      alert("Proyecto guardado correctamente");
+      //window.location.href = './home';
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("No se pudo guardar la informacion del proyecto");
     });
 });
 
-//El crédito es aceptado
-btnFinAnalisisAceptado.addEventListener("click", (e) => {
-  e.preventDefault();
-  const idPrestatario = document.getElementById("NumSolicitud").value;
-  const score = document.getElementById("Score").value;
-  const ingresoMensual = document.getElementById("ingresoMensual").value;
-  //Se hace peticion put para actualizar el estado del prestatario
-  let evaluacion = {
-    idPrestatario: parseInt(idPrestatario),
-    nombre: inputName.value,
-    ingreso_Mensual: parseInt(ingresoMensual),
-    puntuacion_credito: parseInt(score),
-    creditoAceptado: true,
-  };
-  fetch(URL_Backend_evaluacion + `Evaluaciones`, {
-    method: "POST",
-    body: JSON.stringify(evaluacion),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  })
-    .then((res) => {
-      alert("Se acepto el credito");
-      //return res.json();
-    })
-    .then((data) => {
-      //console.log(data);
-      //alert(data.message);
-      console.log("Se actualizo el prestatario");
-      window.location.href = "./Alta";
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+
+
+////Habilitar inputs proyecto para pruebas
+// inputprojectName.disabled = false;
+// inputnumContratoPrestatario.disabled = false;
+// inputtotalCredito.disabled = false;
+// inputtasaInteres.disabled = false;
+// inputplazoCredito.disabled = false;
+// inputnumProveedores.disabled = false;
+// inputdiaPago.disabled = false;
+// inputrutaContrato.disabled = false;
+// btnGuardarProyecto.disabled = false;
+// btnLimpiarForm2.disabled = false;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solicitud de Credito</title>
+    <title>Alta en sistema</title>
     <!-- Bootstrap 5.3 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -24,7 +24,7 @@
       type="image/x-icon"
     />
     <!-- Particular CSS -->
-    <link rel="stylesheet" href="./public/css/2-P-Solicitud.css" />
+    <link rel="stylesheet" href="./public/css/7-P-Seguimiento.css" />
   </head>
 
   <body>
@@ -174,20 +174,32 @@
         </div>
       </div>
     </header>
-    <main class="mainSolicitudCredito">
+    <main class="mainAlta">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-12 col-md-6 col-xl-6">
-            <img
-              src="./public/imagenes/Registro.png"
-              alt="Logo Registro"
-              id="LogoRegistro"
-              class="img-fluid img-max-height-70vh"
-            />
-          </div>
           <div class="col-sm-12 col-md-6 col-xl-6 lead">
-            <form action="/registro" method="post" class="formRegistro">
-              <h2>Registro</h2>
+            <form class="formRegistro">
+              <h2>Datos del prestatario</h2>
+              <div class="elemtos3">
+                <label for="name" class="text-center"
+                  >Numero de solicitud a buscar:</label
+                >
+                <input
+                  type="number"
+                  name="numeroSolicitud"
+                  placeholder="Numero de solicitud"
+                  id="NumSolicitud"
+                  required
+                />
+                <!-- Boton de buscar con bootstrap -->
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="buscarPrestatario"
+                >
+                  Buscar
+                </button>
+              </div>
               <div class="registroDatos">
                 <label for="name">Nombre:</label>
                 <input
@@ -195,7 +207,7 @@
                   name="name"
                   placeholder="Nombre"
                   id="name"
-                  required
+                  disabled
                 />
               </div>
               <div class="registroDatos">
@@ -205,7 +217,7 @@
                   name="rfc"
                   placeholder="RFC4567890"
                   id="rfc"
-                  required
+                  disabled
                 />
               </div>
               <div class="registroDatos">
@@ -215,7 +227,7 @@
                   name="cp"
                   placeholder="Codigo Postal"
                   id="cp"
-                  required
+                  disabled
                 />
               </div>
               <div class="registroDatos">
@@ -225,7 +237,7 @@
                   name="ciudad"
                   placeholder="Ciudad"
                   id="ciudad"
-                  required
+                  disabled
                 />
               </div>
               <div class="registroDatos">
@@ -235,7 +247,7 @@
                   name="direccion"
                   placeholder="Dirección"
                   id="direccion"
-                  required
+                  disabled
                 />
               </div>
               <div class="registroDatos">
@@ -245,7 +257,7 @@
                   name="direccion2"
                   placeholder="Cruzamientos"
                   id="direccion2"
-                  required
+                  disabled
                 />
               </div>
               <div class="registroDatos">
@@ -255,7 +267,7 @@
                   name="telefono"
                   placeholder="Teléfono"
                   id="telefono"
-                  required
+                  disabled
                 />
               </div>
               <div class="registroDatos">
@@ -265,13 +277,219 @@
                   name="email"
                   placeholder="Correo@correo.com"
                   id="email"
-                  required
+                  disabled
                 />
               </div>
-              <div class="botonesFormRegistro">
-                <a href="/login">Iniciar Sesión</a>
-                <button type="button" id="btnlimpiar">Limpiar</button>
-                <button type="submit" id="btnregistrar">Registrarse</button>
+              <div class="registroDatos">
+                <label for="analisis">Estado Analisis de credito:</label>
+                <input
+                  type="text"
+                  name="analisis"
+                  placeholder="Aprobado / Rechazado"
+                  id="analisis"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="score">Score en Buro de crédito:</label>
+                <input
+                  type="text"
+                  name="score"
+                  placeholder="Score Buro de crédito"
+                  id="score"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="ingresoMensual">Ingreso:</label>
+                <input
+                  type="text"
+                  name="ingresoMensual"
+                  placeholder="Ingreso mensual estimado"
+                  id="ingresoMensual"
+                  disabled
+                />
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-12 col-md-6 col-xl-6 lead">
+            <!-- Formulario Para dar de alta el proyecto -->
+            <form class="formRegistro">
+              <h2>Carga de documentos del prestatario</h2>
+              <div class="registroDatos">
+                <label for="identificacion">Identificación:</label>
+                <input
+                  type="file"
+                  name="identificacion"
+                  id="identificacion"
+                  disabled
+                  accept="application/pdf"
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="contratoPrestatario"
+                  >Contrato del prestatario:</label
+                >
+                <input
+                  type="file"
+                  name="contratoPrestatario"
+                  id="contratoPrestatario"
+                  disabled
+                  accept="application/pdf"
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="estadoFinanciero">Estado financiero: </label>
+                <input
+                  type="file"
+                  name="estadoFinanciero"
+                  id="estadoFinanciero"
+                  disabled
+                  accept="application/pdf"
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="comprobanteDomicilio"
+                  >Comprobante de domicilio:</label
+                >
+                <input
+                  type="file"
+                  name="comprobanteDomicilio"
+                  id="comprobanteDomicilio"
+                  disabled
+                  accept="application/pdf"
+                />
+              </div>
+              <div class="registroDatos">
+                <!-- Boton fin analisis de credito -->
+                <button
+                  type="button"
+                  id="btnLimpiarForm2"
+                  disabled
+                  class="bg-danger"
+                  style="color: white"
+                >
+                  Limpiar Datos
+                </button>
+                <!-- Boton fin analisis de credito -->
+                <button
+                  type="button"
+                  id="btnGuardarPrestatario"
+                  disabled
+                  class="btn-guardar"
+                >
+                  Cargar archivos
+                </button>
+              </div>
+            </form>
+            <!-- Formulario Cargar Informacion del proyecto -->
+            <form class="formRegistro">
+              <h2>Información del proyecto: </h2>
+              <div class="registroDatos">
+                <label for="projectName">Nombre del proyecto:</label>
+                <input
+                  type="text"
+                  name="projectName"
+                  id="projectName"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="numContratoPrestatario"
+                  >Numero de contrato del prestatario:</label
+                >
+                <input
+                  type="number"
+                  name="numContratoPrestatario"
+                  id="numContratoPrestatario"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="totalCredito">Total de credito autorizado: </label>
+                <input
+                  type="text"
+                  name="totalCredito"
+                  id="totalCredito"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="tasaInteres"
+                  >Tasa de interes:</label
+                >
+                <input
+                  type="text"
+                  name="tasaInteres"
+                  id="tasaInteres"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="plazoCredito"
+                  >Plazo del crédito en meses:</label
+                >
+                <input
+                  type="number"
+                  name="plazoCredito"
+                  id="plazoCredito"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="numProveedores"
+                  >Numero de Proveedores:</label
+                >
+                <input
+                  type="number"
+                  name="numProveedores"
+                  id="numProveedores"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="diaPago"
+                  >Día de pago:</label
+                >
+                <input
+                  type="number"
+                  name="diaPago"
+                  id="diaPago"
+                  disabled
+                />
+              </div>
+              <div class="registroDatos">
+                <label for="rutaContrato"
+                  >Contrato del proyecto:</label
+                >
+                <input
+                  type="file"
+                  name="rutaContrato"
+                  id="rutaContrato"
+                  disabled
+                  accept="application/pdf"
+                />
+              </div>
+              <div class="registroDatos">
+                <!-- Boton fin info proyecto -->
+                <button
+                  type="button"
+                  id="btnLimpiarForm1"
+                  disabled
+                  class="bg-danger"
+                  style="color: white"
+                >
+                  Limpiar Datos
+                </button>
+                <!-- Boton fin info proyecto -->
+                <button
+                  type="button"
+                  id="btnGuardarProyecto"
+                  disabled
+                  class="btn-guardar"
+                >
+                  Cargar archivos
+                </button>
               </div>
             </form>
           </div>
@@ -409,5 +627,5 @@
   ></script>
   <!-- Script General -->
   <script src="./public/js/script.js"></script>
-  <script src="./public/js/2-P-Solicitud.js"></script>
+  <script src="./public/js/7-P-Seguimiento.js"></script>
 </html>

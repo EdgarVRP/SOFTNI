@@ -45,8 +45,12 @@ router.get('/solicitud', (req, res,next) => {
 router.get('/Alta',isAuth, (req, res,next) => {
     res.sendFile('3-P-Alta.html', { root: './src/views' });
 });
+//PANTALLA 4-P Indicadores
+router.get('/indicadores',isAuth, (req, res,next) => {
+    res.sendFile('4-P-Indicadores.html', { root: './src/views' });
+});
 
-//PANTALLA 0-1 ADMIN USUARIO ADMINISTRADOR USUARIO
+//PANTALLA 5-P-1 ADMIN USUARIO ADMINISTRADOR USUARIO
 const usuarioController = require('../controllers/1-userController')
 //Mostrar todos los usuarios (GET)
 router.get('/usuarios',isAuth, usuarioController.mostrar)
@@ -57,5 +61,14 @@ router.post('/usuarios/editar',isAuth, usuarioController.editar)
 //Borrar usuarios (GET)
 router.get('/usuarios/borrar/:id',isAuth, usuarioController.borrar)
 
+//PANTALLA 6-P Indicadores
+router.get('/contact', (req, res,next) => {
+    res.sendFile('4-P-Indicadores.html', { root: './src/views' });
+});
+
+//PANTALLA 7-P Seguimiento
+router.get('/Seguimiento',isAuth, (req, res,next) => {
+    res.sendFile('7-P-Seguimiento.html', { root: './src/views' });
+});
 
 module.exports = router;

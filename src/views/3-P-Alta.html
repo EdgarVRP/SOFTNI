@@ -75,9 +75,12 @@
                         <a class="nav-link" href="./Alta">Alta en sistema</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="./indicadores.html"
+                        <a class="nav-link" href="./indicadores"
                           >Indicadores</a
                         >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./Seguimiento">Seguimiento de crédito</a>
                       </li>
                       <!-- Se añade Admin que mostrara menu desplegable de Usuarios, Prestatarios y Proyectos -->
                       <li class="nav-item dropdown">
@@ -320,6 +323,7 @@
                   name="identificacion"
                   id="identificacion"
                   disabled
+                  accept="application/pdf"
                 />
               </div>
               <div class="registroDatos">
@@ -331,6 +335,7 @@
                   name="contratoPrestatario"
                   id="contratoPrestatario"
                   disabled
+                  accept="application/pdf"
                 />
               </div>
               <div class="registroDatos">
@@ -340,6 +345,7 @@
                   name="estadoFinanciero"
                   id="estadoFinanciero"
                   disabled
+                  accept="application/pdf"
                 />
               </div>
               <div class="registroDatos">
@@ -351,13 +357,14 @@
                   name="comprobanteDomicilio"
                   id="comprobanteDomicilio"
                   disabled
+                  accept="application/pdf"
                 />
               </div>
               <div class="registroDatos">
                 <!-- Boton fin analisis de credito -->
                 <button
                   type="button"
-                  id="btnLimpiarForm1"
+                  id="btnLimpiarForm2"
                   disabled
                   class="bg-danger"
                   style="color: white"
@@ -453,13 +460,14 @@
               </div>
               <div class="registroDatos">
                 <label for="rutaContrato"
-                  >Día de pago:</label
+                  >Contrato del proyecto:</label
                 >
                 <input
                   type="file"
                   name="rutaContrato"
                   id="rutaContrato"
                   disabled
+                  accept="application/pdf"
                 />
               </div>
               <div class="registroDatos">
@@ -476,7 +484,7 @@
                 <!-- Boton fin info proyecto -->
                 <button
                   type="button"
-                  id="btnGuardarPrestatario"
+                  id="btnGuardarProyecto"
                   disabled
                   class="btn-guardar"
                 >
@@ -492,9 +500,14 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-xl-12 text-center">
+            <div class="footerNav">
+            <a href="./contacto">
+              <p >Contacto</p>
+            </a>
             <a href="https://github.com/EdgarVRP">
               <p class="Copyright">SOFTNI&copy By EdgarVRP</p>
             </a>
+          </div>
             <!-- Button trigger modal -->
             <button
               type="button"

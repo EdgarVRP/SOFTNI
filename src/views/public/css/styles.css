@@ -16,13 +16,24 @@ header{
 }
 /*Estilos footer*/
 footer{
-  background-color: #A9A9A9;
+  background-color: #00304E;
   text-align: center;
 }
+.footerNav{
+  display: flex;
+  justify-content: center;
+  /*Se usa el space betwen*/
+  justify-content: space-around;
+}
+.footerNav a{
+  text-decoration: none;
+  color: #fff;
+}
+
 /*btn modal guardar*/
 .btn-guardar{
   /*margin: 0 45%;*/
-  background-color: #00304E;
+  background-color: blue;
   border: 0;
   box-sizing: border-box;
   cursor: pointer;
