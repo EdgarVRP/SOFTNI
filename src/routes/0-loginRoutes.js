@@ -57,13 +57,13 @@ router.get('/usuarios',isAuth, usuarioController.mostrar)
 //Crear usuarios (POST)
 router.post('/usuarios/crear',isAuth, usuarioController.crear)
 //Editar usuarios (POST)
-router.post('/usuarios/editar',isAuth, usuarioController.editar)
+router.put('/usuarios/editar',isAuth, usuarioController.editar)
 //Borrar usuarios (GET)
-router.get('/usuarios/borrar/:id',isAuth, usuarioController.borrar)
+router.delete('/usuarios/borrar/',isAuth, usuarioController.borrar)
 
 //PANTALLA 6-P Indicadores
-router.get('/contact', (req, res,next) => {
-    res.sendFile('4-P-Indicadores.html', { root: './src/views' });
+router.get('/contacto', (req, res,next) => {
+    res.sendFile('6-P-ContactUs.html', { root: './src/views' });
 });
 
 //PANTALLA 7-P Seguimiento

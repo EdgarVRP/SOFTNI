@@ -56,7 +56,7 @@
               </button>
 
               <div class="row">
-                <h1 class="text-center">SOFOM - Alta en sistema</h1>
+                <h1 class="text-center">SOFOM - Administrador de Usuarios</h1>
                 <div class="collapse navbar-collapse" id="pages">
                   <ul class="navbar-nav ms-auto">
                     <li id="nav-home" class="nav-item">
@@ -193,7 +193,7 @@
     </thead>
     <tbody>
       <% usuarios.forEach( (usuario)=> { %><tr>
-          <td style="display: none;"><%= usuario._id %></td>
+          <td style="display: none;"><%=usuario._id%></td>
           <td><%=usuario.idUsuario%></td>
           <td><%=usuario.userName%></td>
           <td class="hidetext"><%=usuario.password%></td>

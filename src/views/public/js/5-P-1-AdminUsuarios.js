@@ -30,9 +30,6 @@ on(document, "click", ".btnEditar", (e) => {
 //fetch para editar usuario
 const formEditar = document.getElementById("formEditar");
 formEditar.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-
 /*const id = req.body.id_editar
     const idUsuario = req.body.idUsuario_editar
     const userName = req.body.userName_editar
@@ -57,7 +54,7 @@ formEditar.addEventListener("submit", (e) => {
     Telefono_editar: Telefono_editar.value
   };
   console.log(usuario);
-  fetch("/adminUsuarios/editar", {
+  fetch("/usuarios/editar", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -69,6 +66,4 @@ formEditar.addEventListener("submit", (e) => {
       console.log(data);
     })
     .catch((err) => console.log(err));
-  modalUsuario.hide();
-  formEditar.reset();
 });

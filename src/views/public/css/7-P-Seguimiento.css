@@ -1,0 +1,29 @@
+.formRegistro{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+}
+.formRegistro input{
+    width: 80%;
+    height: 40px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+  input{
+    background-color: #D9D9D9;
+  }
+
+  .registroDatos{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 10% 0 0;
+  }
