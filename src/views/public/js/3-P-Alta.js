@@ -69,10 +69,11 @@ function consultarPrestatario(idPrestatario) {
         },
       })
         .then((res) => {
+          console.log(res);
           return res.json();
         })
         .then((data) => {
-          //console.log(data);
+          console.log(data);
           inputAnalisis.value = data.aprobado;
           inputScore.value = data.puntuacion_credito;
           inputingresoMensual.value = data.ingreso_mensual;
@@ -87,6 +88,7 @@ function consultarPrestatario(idPrestatario) {
             btnlimpiarDatos1.disabled = false;
             btnCargarArchivos1.disabled = false;
           } else {
+
           }
         })
         .catch((err) => {

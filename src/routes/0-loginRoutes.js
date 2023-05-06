@@ -61,6 +61,15 @@ router.put('/usuarios/editar',isAuth, usuarioController.editar)
 //Borrar usuarios (GET)
 router.delete('/usuarios/borrar/',isAuth, usuarioController.borrar)
 
+//PANTALLA 5-P-2 ADMINISTRADOR Prestatarios
+router.get('/prestatarios',isAuth, (req, res,next) => {
+    res.sendFile('5-P-2-AdminPrestatarios.html', { root: './src/views' });
+});
+//PANTALLA 5-P-3 ADMINISTRADOR Proyectos
+router.get('/proyectos',isAuth, (req, res,next) => {
+    res.sendFile('5-P-3-AdminProyectos.html', { root: './src/views' });
+});
+
 //PANTALLA 6-P Indicadores
 router.get('/contacto', (req, res,next) => {
     res.sendFile('6-P-ContactUs.html', { root: './src/views' });

@@ -196,11 +196,11 @@ btnFinAnalisisAceptado.addEventListener("click", (e) => {
   const ingresoMensual = document.getElementById("ingresoMensual").value;
   //Se hace peticion put para actualizar el estado del prestatario
   let evaluacion = {
-    idPrestatario: parseInt(idPrestatario),
+    idPrestatario: idPrestatario,
     nombre: inputName.value,
-    ingreso_Mensual: parseInt(ingresoMensual),
+    ingreso_mensual: parseInt(ingresoMensual),
     puntuacion_credito: parseInt(score),
-    creditoAceptado: true,
+    aprobado: true
   };
   fetch(URL_Backend_evaluacion + `Evaluaciones`, {
     method: "POST",
