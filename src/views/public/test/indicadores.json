@@ -1,0 +1,278 @@
+{
+    "2022-01": {
+        "P_seguimiento": {
+            "I1": 1000,
+            "I2": 100,
+            "I3": 50,
+            "I4": 200,
+            "I5": 20,
+            "I6": 0.05,
+            "I7": {
+                "materiales_permanentes": 70,
+                "subcontratos_renta_equipo_maquinaria": 20,
+                "consumibles_ejecucion": 10
+            },
+            "I8": 30,
+            "I9": 95,
+            "I10": 90,
+            "I11": {
+                "peticiones_pago": {
+                    "cotizacion": 80,
+                    "orden_compra": 75,
+                    "factura": 70,
+                    "anticipo": 60,
+                    "rembolso": 50
+                },
+                "programas_obra": 85,
+                "facturas": 90
+            },
+            "I12": 500,
+            "I13": 100,
+            "I14": 50,
+            "I15": 0.8,
+            "I16": {
+                "revision_gasto_cobro": 0.9,
+                "validacion_uso_recursos_programa_trabajo": 0.8
+            },
+            "I17": 5
+        },
+        "P_alta": {
+            "I1": 50,
+            "I2": 20,
+            "I3": 5,
+            "I4": 2,
+            "I5": 10,
+            "I6": 3
+        }
+    },
+    "2022-02": {
+        "P_seguimiento": {
+            "I1": 2500,
+            "I2": 200,
+            "I3": 70,
+            "I4": 300,
+            "I5": 30,
+            "I6": 0.1,
+            "I7": {
+                "materiales_permanentes": 80,
+                "subcontratos_renta_equipo_maquinaria": 15,
+                "consumibles_ejecucion": 5
+            },
+            "I8": 50,
+            "I9": 90,
+            "I10": 80,
+            "I11": {
+                "peticiones_pago": {
+                    "cotizacion": 85,
+                    "orden_compra": 80,
+                    "factura": 75,
+                    "anticipo": 65,
+                    "rembolso": 60
+                },
+                "programas_obra": 80,
+                "facturas": 85
+            },
+            "I12": 1000,
+            "I13": 150,
+            "I14": 80,
+            "I15": 0.75,
+            "I16": {
+                "revision_gasto_cobro": 0.8,
+                "validacion_uso_recursos_programa_trabajo": 0.7
+            },
+            "I17": 10
+        },
+        "P_alta": {
+            "I1": 30,
+            "I2": 15,
+            "I3": 3,
+            "I4": 1,
+            "I5": 5,
+            "I6": 2
+        }
+    },
+    "2022-03": {
+        "P_seguimiento": {
+            "I1": 1500,
+            "I2": 300,
+            "I3": 60,
+            "I4": 150,
+            "I5": 25,
+            "I6": 0.03,
+            "I7": {
+                "materiales_permanentes": 60,
+                "subcontratos_renta_equipo_maquinaria": 25,
+                "consumibles_ejecucion": 15
+            },
+            "I8": 20,
+            "I9": 92,
+            "I10": 85,
+            "I11": {
+                "peticiones_pago": {
+                    "cotizacion": 75,
+                    "orden_compra": 70,
+                    "factura": 65,
+                    "anticipo": 55,
+                    "rembolso": 45
+                },
+                "programas_obra": 70,
+                "facturas": 75
+            },
+            "I12": 800,
+            "I13": 120,
+            "I14": 50,
+            "I15": 0.9,
+            "I16": {
+                "revision_gasto_cobro": 0.95,
+                "validacion_uso_recursos_programa_trabajo": 0.85
+            },
+            "I17": 8
+        },
+        "P_alta": {
+            "I1": 40,
+            "I2": 10,
+            "I3": 2,
+            "I4": 1,
+            "I5": 5,
+            "I6": 1
+        }
+    },
+    "2022-04": {
+        "P_seguimiento": {
+            "I1": 1500,
+            "I2": 300,
+            "I3": 60,
+            "I4": 150,
+            "I5": 25,
+            "I6": 0.03,
+            "I7": {
+                "materiales_permanentes": 60,
+                "subcontratos_renta_equipo_maquinaria": 25,
+                "consumibles_ejecucion": 15
+            },
+            "I8": 20,
+            "I9": 92,
+            "I10": 85,
+            "I11": {
+                "peticiones_pago": {
+                    "cotizacion": 75,
+                    "orden_compra": 70,
+                    "factura": 65,
+                    "anticipo": 55,
+                    "rembolso": 45
+                },
+                "programas_obra": 70,
+                "facturas": 75
+            },
+            "I12": 800,
+            "I13": 120,
+            "I14": 50,
+            "I15": 0.9,
+            "I16": {
+                "revision_gasto_cobro": 0.95,
+                "validacion_uso_recursos_programa_trabajo": 0.85
+            },
+            "I17": 8
+        },
+        "P_alta": {
+            "I1": 40,
+            "I2": 10,
+            "I3": 2,
+            "I4": 1,
+            "I5": 5,
+            "I6": 1
+        }
+    },
+    "2022-05":{
+        "P_seguimiento": {
+          "I1": 2000,
+          "I2": 450,
+          "I3": 70,
+          "I4": 180,
+          "I5": 30,
+          "I6": 0.04,
+          "I7": {
+            "materiales_permanentes": 70,
+            "subcontratos_renta_equipo_maquinaria": 30,
+            "consumibles_ejecucion": 20
+          },
+          "I8": 25,
+          "I9": 90,
+          "I10": 80,
+          "I11": {
+            "peticiones_pago": {
+              "cotizacion": 80,
+              "orden_compra": 75,
+              "factura": 70,
+              "anticipo": 60,
+              "rembolso": 50
+            },
+            "programas_obra": 75,
+            "facturas": 80
+          },
+          "I12": 900,
+          "I13": 150,
+          "I14": 60,
+          "I15": 0.8,
+          "I16": {
+            "revision_gasto_cobro": 0.9,
+            "validacion_uso_recursos_programa_trabajo": 0.8
+          },
+          "I17": 10
+        },
+        "P_alta": {
+          "I1": 50,
+          "I2": 12,
+          "I3": 3,
+          "I4": 2,
+          "I5": 7,
+          "I6": 2
+        }
+      },
+    "2022-06":{
+        "P_seguimiento": {
+          "I1": 2200,
+          "I2": 400,
+          "I3": 80,
+          "I4": 200,
+          "I5": 30,
+          "I6": 0.04,
+          "I7": {
+            "materiales_permanentes": 80,
+            "subcontratos_renta_equipo_maquinaria": 35,
+            "consumibles_ejecucion": 20
+          },
+          "I8": 25,
+          "I9": 95,
+          "I10": 90,
+          "I11": {
+            "peticiones_pago": {
+              "cotizacion": 80,
+              "orden_compra": 75,
+              "factura": 70,
+              "anticipo": 60,
+              "rembolso": 50
+            },
+            "programas_obra": 75,
+            "facturas": 80
+          },
+          "I12": 1000,
+          "I13": 150,
+          "I14": 60,
+          "I15": 0.85,
+          "I16": {
+            "revision_gasto_cobro": 0.92,
+            "validacion_uso_recursos_programa_trabajo": 0.80
+          },
+          "I17": 12
+        },
+        "P_alta": {
+          "I1": 60,
+          "I2": 15,
+          "I3": 3,
+          "I4": 2,
+          "I5": 10,
+          "I6": 2
+        }
+      }
+}
