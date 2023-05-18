@@ -132,7 +132,7 @@ cargarDatos();
 
 function grafica0() {
   let data0 = {
-    labels: ["Evaluaciones", "Proyectos", "Prestatarios"],
+    labels: ["Prestatarios", "Proyectos", "Evaluaciones"],
     datasets: [
       {
         label: "Cantidad de registros",
