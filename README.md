@@ -65,8 +65,8 @@ touch src/routes/0-loginRoutes.js
 Instrucciones video: https://www.youtube.com/watch?v=uVltgEcjNww&t=2103s
 
 ```
-npm i ejs-mate connect-flash morgan passport passport-local express-session
-probando encriptamiento:
+npm i ejs connect-flash morgan passport passport-local express-session
+Para el encriptamiento:
 npm i bcryptjs
 INSTALADOS ANTERIORMENTE PERO SON TAMBIEN NECESARIOS
 npm i express mongoose ejs

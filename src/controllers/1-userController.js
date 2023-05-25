@@ -13,7 +13,6 @@ module.exports.mostrar = (req, res)=>{
              lastid: 1+usuarios[usuarios.length-1].idUsuario})
     })
 }
-
 //Crear
 module.exports.crear = (req, res)=>{
     //console.log(req.body)
@@ -38,7 +37,6 @@ module.exports.crear = (req, res)=>{
         res.redirect('/usuarios')
     })
 }
-
 //Editar
 module.exports.editar = (req,res)=>{
     
@@ -62,7 +60,6 @@ module.exports.editar = (req,res)=>{
         res.redirect('/usuarios')
     })
 }
-
 //Borrar
 module.exports.borrar = (req, res)=>{
     const id = req.params.id

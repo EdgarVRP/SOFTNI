@@ -12,7 +12,6 @@ const port = process.env.PORT || 3000;
 //Se invoca conexion a la base de datos
 require('./db/1-userDB.js');//conexion CRUD USUARIOS
 require('./passport/local-auth');
-//setting up the server
 //indicando la ruta de las vistas
 app.set('views',path.join(__dirname,'views'));
 //middlewares
@@ -30,7 +29,6 @@ app.use(flash()); //debe ir despues de session y antes de passport
 app.use((express.static(__dirname + '/views')));
 app.use(passport.initialize());
 app.use(passport.session());
-
 //Haciendo disponible el mensaje de flash
 app.use((req,res,next)=>{
     app.locals.signupMessage=req.flash('signupMessage');//signupMessage:nombre de la variable
@@ -39,10 +37,6 @@ app.use((req,res,next)=>{
 })
 //requerimos las rutas
 app.use('/',require('./routes/0-loginRoutes')); //Ruta login
-/*
-const usuarios=require('./routes/1-userRoutes'); //Ruta usuarios
-app.use(usuarios);
-*/
 app.use((req, res, next) => {
     res.status(404).send('Error: 404 - Not Found');
 });
