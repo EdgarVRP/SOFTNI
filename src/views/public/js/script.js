@@ -6,7 +6,7 @@ let URL_Backend_proyecto= `http://localhost:8080/`;
 let URL_Backend_files= `http://localhost:3002/`;
 
 */
-let URL_Backend_prestatario= `https://softni-syncprestatario-production.up.railway.app/`;
-let URL_Backend_evaluacion= `https://softni-syncevaluacion-production.up.railway.app/`;
-let URL_Backend_proyecto=`https://softni-syncproyecto-production.up.railway.app/`;
-let URL_Backend_files= `https://softni-syncfiles-production.up.railway.app/`;
+let URL_Backend_prestatario= `https://softni-syncprestatario-production-ddf6.up.railway.app/`;
+let URL_Backend_evaluacion= `https://softni-syncevaluacion-production-6699.up.railway.app/`;
+let URL_Backend_proyecto=`https://softni-syncproyecto-production-f120.up.railway.app/`;
+let URL_Backend_files= `https://softni-syncfiles-production-4d6b.up.railway.app/`;
