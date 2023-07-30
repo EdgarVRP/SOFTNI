@@ -75,12 +75,12 @@
                         <a class="nav-link" href="./Alta">Alta en sistema</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="./indicadores"
-                          >Indicadores</a
-                        >
+                        <a class="nav-link" href="./indicadores">Indicadores</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="./Seguimiento">Seguimiento de crédito</a>
+                        <a class="nav-link" href="./Seguimiento"
+                          >Seguimiento de crédito</a
+                        >
                       </li>
                       <!-- Se añade Admin que mostrara menu desplegable de Usuarios, Prestatarios y Proyectos -->
                       <li class="nav-item dropdown">
@@ -179,11 +179,17 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-xl-12">
             <h1 class="text-center">
-              Marco de Servicios para entidades SOFOM (Descripción técnica del proyecto)
+              Marco de Servicios para entidades SOFOM (Descripción técnica del
+              proyecto)
             </h1>
+            <p>
+              Para acceder al sistema se pueden usar las credenciales genericas:
+            </p>
+            <p>Usuario: test1@ejemplo.com</p>
+            <p>Contraseña: test1@ejemplo.com</p>
             <h2>El mapa de navegación del sitio es el siguiente:</h2>
           </div>
-          <div class="col-sm-12 col-md-6 col-xl-6">
+          <div class="col-sm-12 col-md-12 col-xl-6">
             <img
               src="./public/imagenes/home/MapaNavegacion.png"
               alt="Mapa de Navegacion"
@@ -192,7 +198,7 @@
               style="max-height: 800px"
             />
           </div>
-          <div class="col-sm-12 col-md-6 col-xl-6">
+          <div class="col-sm-12 col-md-12 col-xl-6">
             <h1>Introducción</h1>
             <h2>Descripción del problema</h2>
             <p>
@@ -259,7 +265,7 @@
             <h1>Documentación de procesos de negocio</h1>
             <h2>Procesos de Negocio:</h2>
             <img
-              src="./public/imagenes/home/Imagen2.png"
+              src="./public/imagenes/home/ProcesosNegocio.png"
               alt="Procesos de Negocio"
               id="ProcesosNegocio"
               class="img-fluid img-max-height-70vh"
@@ -378,15 +384,43 @@
           <div class="col-sm-12 col-md-12 col-xl-12">
             <h2>Diseño</h2>
             <p>
-              Se elaboraron cinco diagramas de clases para el diseño de los
+              Se elaboraron cuatro diagramas de clases para el diseño de los
               servicios
             </p>
+            <p>Diagrama de clase del servicio SOFTNI-SyncProyecto:</p>
+            <!-- Se ajustara la imagen al ancho de la pantalla o maximo 1000px-->
             <img
-              src="./public/imagenes/home/Clases.png"
-              alt="Diagrama de clases"
-              id="DiagramaClases"
+              src="./public/imagenes/home/DClaseProyecto.png"
+              alt="Diagrama de clase del servicio SOFTNI-SyncProyecto"
+              id="DiagramaClases 1"
               class="img-fluid img-max-height-70vh"
+              style="max-width: 1000px; width: 100%"
             />
+            <p>Diagrama de clase del servicio SOFTNI-SyncPrestatario:</p>
+            <img
+              src="./public/imagenes/home/DClasePrestatario.png"
+              alt="Diagrama de clase del servicio SOFTNI-SyncPrestatario"
+              id="DiagramaClases 2"
+              class="img-fluid img-max-height-70vh"
+              style="max-width: 1000px; width: 100%"
+            />
+            <p>Diagrama de clase del servicio SOFTNI-SyncEvaluacion:</p>
+            <img
+              src="./public/imagenes/home/DClaseEvaluacion.png"
+              alt="Diagrama de clase del servicio SOFTNI-SyncEvaluacion"
+              id="DiagramaClases 3"
+              class="img-fluid img-max-height-70vh"
+              style="max-width: 1000px; width: 100%"
+            />
+            <p>Diagrama de clase del servicio SOFTNI-SyncFiles:</p>
+            <img
+              src="./public/imagenes/home/DClaseFiles.png"
+              alt="Diagrama de clase del servicio SOFTNI-SyncFiles"
+              id="DiagramaClases 4"
+              class="img-fluid img-max-height-70vh"
+              style="max-width: 1000px; width: 100%"
+            />
+
             <p>
               Tambien para el proyecto se realizo un diagrama de despliegue:
             </p>
@@ -395,6 +429,7 @@
               alt="Diagrama de despliegue"
               id="DiagramaDespliegue"
               class="img-fluid img-max-height-70vh"
+              style="max-width: 1000px; width: 100%"
             />
           </div>
           <div class="col-sm-12 col-md-12 col-xl-12">
@@ -414,9 +449,6 @@
               <li>Flask</li>
             </ol>
           </div>
-          <div class="col-sm-12 col-md-12 col-xl-12">
-            <h2>Pruebas y Resultados</h2>
-          </div>
         </div>
       </div>
     </main>
@@ -425,13 +457,13 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-xl-12 text-center">
             <div class="footerNav">
-            <a href="./contacto">
-              <p >Contacto</p>
-            </a>
-            <a href="https://github.com/EdgarVRP">
-              <p class="Copyright">SOFTNI&copy By EdgarVRP</p>
-            </a>
-          </div>
+              <a href="./contacto">
+                <p>Contacto</p>
+              </a>
+              <a href="https://github.com/EdgarVRP">
+                <p class="Copyright">SOFTNI&copy By EdgarVRP</p>
+              </a>
+            </div>
             <!-- Button trigger modal -->
             <button
               type="button"
